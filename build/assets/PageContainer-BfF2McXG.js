@@ -1,0 +1,1 @@
+import{j as e}from"./index-CBkQUGjH.js";function o({children:r,className:a=""}){return e.jsx("div",{className:`min-h-screen ${a}`,style:{backgroundColor:"var(--bg-primary)"},children:r})}export{o as P};
