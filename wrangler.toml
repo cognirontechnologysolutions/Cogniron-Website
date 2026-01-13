@@ -10,7 +10,7 @@ compatibility_date = "2026-01-13"
 # account_id = "your-account-id"
 
 [site]
-# Directory produced by `npm run build` (Vite default is `dist`)
+# Directory produced by `npm run build`
 bucket = "./dist"
 # entry-point corresponds to the worker's folder (workers-site)
 entry-point = "workers-site"
