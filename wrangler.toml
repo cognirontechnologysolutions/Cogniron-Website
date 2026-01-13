@@ -1,0 +1,5 @@
+[site]
+  # If you use Cloudflare Pages/Workers site configuration, adjust these as needed.
+
+name = "cogniron-website"
+compatibility_date = "2026-01-13"
