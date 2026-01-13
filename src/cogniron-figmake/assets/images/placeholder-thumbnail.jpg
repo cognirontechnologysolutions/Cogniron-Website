@@ -1,9 +1,0 @@
-<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="300" fill="#E2F2FF"/>
-  <circle cx="200" cy="120" r="40" fill="#0054A6" opacity="0.3"/>
-  <rect x="100" y="180" width="200" height="8" fill="#0054A6" opacity="0.2" rx="4"/>
-  <rect x="120" y="200" width="160" height="6" fill="#00376A" opacity="0.15" rx="3"/>
-  <text x="200" y="250" font-family="Arial, sans-serif" font-size="14" fill="#0054A6" text-anchor="middle">
-    Thumbnail 400×300
-  </text>
-</svg>

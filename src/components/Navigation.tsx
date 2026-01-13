@@ -17,9 +17,9 @@ export function Navigation() {
   const [insightsDropdownOpen, setInsightsDropdownOpen] = useState(false);
   const location = useLocation();
   
-  const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const qaSubmenuTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const insightsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const servicesTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const qaSubmenuTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const insightsTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
