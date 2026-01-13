@@ -1,0 +1,11 @@
+export { XFirstRequirementAmbiguityPage } from './XFirstRequirementAmbiguityPage';
+export { TestAutomationPage } from './TestAutomationPage';
+export { PerformanceEngineeringPage } from './PerformanceEngineeringPage';
+export { SecurityEngineeringPage } from './SecurityEngineeringPage';
+export { XFirstBuildVerificationPage } from './XFirstBuildVerificationPage';
+export { XFirstFunctionalTestingPage } from './XFirstFunctionalTestingPage';
+export { XFirstIntegrationTestingPage } from './XFirstIntegrationTestingPage';
+export { XFirstReadinessTestingPage } from './XFirstReadinessTestingPage';
+export { XFirstProcessGovernancePage } from './XFirstProcessGovernancePage';
+export { XFirstTestOpsPage } from './XFirstTestOpsPage';
+export { XFirstDevOpsToolChainPage } from './XFirstDevOpsToolChainPage';

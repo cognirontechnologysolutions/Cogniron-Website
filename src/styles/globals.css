@@ -1,0 +1,1340 @@
+@custom-variant dark (&:is(.dark *));
+
+/* React Slick Carousel Styles */
+@import "slick-carousel@1.8.1/slick/slick.css";
+@import "slick-carousel@1.8.1/slick/slick-theme.css";
+
+/* Base Tailwind Variables */
+:root {
+  --font-size: 16px;
+  --header-h: 80px;
+  --hero-top-gap: 32px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* ============================================
+   COGNIRON THEME SYSTEM - CSS VARIABLES
+   ============================================ */
+
+/* Light Theme (Default) */
+:root[data-theme="light"],
+:root {
+  /* Background Colors - Brand-Enhanced Blue System */
+  --bg-primary: #E2F2FF;        /* Soft brand blue - main page backgrounds */
+  --bg-secondary: #FFFFFF;      /* Clean white - alternating sections */
+  --bg-alternate: #F7FBFF;      /* Very light blue tint - subtle variation */
+  --bg-card: #FFFFFF;           /* Clean white - card surfaces */
+  --bg-hover: #D6EBFF;          /* Slightly darker blue for hover states */
+  
+  /* Legacy aliases for backward compatibility */
+  --background-light: #E2F2FF;
+  --background-light-alt: #FFFFFF;
+  --surface-light: #FFFFFF;
+  --surface-subtle-light: #F7FBFF;
+  
+  /* Text Colors - Brand-Enhanced */
+  --text-primary: #00376A;      /* Deep subdued navy - primary headings */
+  --text-secondary: #3C4A57;    /* Mid-gray - body text */
+  --text-muted: #6B7280;        /* Soft gray - muted text */
+  --text-inverse: #FFFFFF;      /* White - text on dark backgrounds */
+  
+  /* Heading Colors */
+  --heading-primary: #00376A;   /* Deep navy - H1, H2 */
+  --heading-secondary: #0054A6; /* Brand blue - H3, section titles */
+  --heading-accent: #001E3C;    /* Deep navy - hero text */
+  
+  /* Brand Accent Colors */
+  --accent-primary: #0054A6;    /* Brand blue */
+  --accent-primary-hover: #003D7A;
+  --accent-secondary: #10B981;  /* Green - success/secondary */
+  --accent-secondary-hover: #059669;
+  --accent-aqua: #00C2C7;       /* Soft aqua */
+  --accent-cyan: #00A8B7;       /* Muted cyan */
+  --accent-navy: #001E3C;       /* Deep navy */
+  
+  /* Gradient Definitions */
+  --gradient-blue-aqua: linear-gradient(135deg, #0054A6 0%, #00C2C7 100%);
+  --gradient-navy-cyan: linear-gradient(120deg, #001E3C 0%, #00A8B7 100%);
+  --gradient-abstract-light: linear-gradient(135deg, rgba(0, 84, 166, 0.08) 0%, rgba(0, 194, 199, 0.06) 100%);
+  
+  /* Border & Divider */
+  --border-color: #E2E8F0;      /* Soft, low-contrast border */
+  --border-hover: #CBD5E1;      /* Slightly darker for hover */
+  --border-accent: #00C2C7;     /* Aqua accent border */
+  --border-subtle: #CFE5F5;     /* Very soft blue border for light blue backgrounds */
+  
+  /* Shadows - Enhanced */
+  --shadow-sm: 0 1px 3px rgba(0, 55, 106, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 55, 106, 0.10);
+  --shadow-lg: 0 10px 24px rgba(0, 55, 106, 0.12);
+  --shadow-accent: 0 4px 16px rgba(0, 84, 166, 0.15);
+  
+  /* Toggle Button */
+  --toggle-bg: #F3F4F6;         /* Subtle neutral background */
+  --toggle-border: #E2E8F0;     /* Soft border */
+  --toggle-icon: #FFA500;
+  
+  /* Neural Patterns */
+  --neural-line: rgba(0, 84, 166, 0.18);  /* Enhanced visibility from 0.1 to 0.18 */
+  --neural-orb: rgba(0, 194, 199, 0.08);
+  
+  /* Input Fields */
+  --input-bg: #FFFFFF;
+  --input-border: #E2E8F0;      /* Soft border */
+  --input-focus-border: #0054A6;
+  --input-focus-shadow: 0 0 0 3px rgba(0, 84, 166, 0.1);
+  
+  /* Glassmorphism Header - Light Theme */
+  --header-glass-bg: rgba(255, 255, 255, 0.75);
+  --header-glass-border: rgba(0, 84, 166, 0.15);
+  --header-glass-shadow: 0 4px 24px rgba(0, 55, 106, 0.08);
+  --header-glass-blur: blur(20px);
+  
+  /* Consistent Spacing System */
+  --spacing-section-y: 6rem;        /* 96px - Standard vertical section padding */
+  --spacing-section-y-lg: 8rem;     /* 128px - Large vertical section padding */
+  --spacing-section-y-sm: 4rem;     /* 64px - Small vertical section padding */
+  
+  --spacing-content-gap: 4rem;      /* 64px - Gap between section header and content */
+  --spacing-content-gap-sm: 3rem;   /* 48px - Smaller gap for tighter sections */
+  
+  --spacing-grid-gap: 2rem;         /* 32px - Standard grid gap */
+  --spacing-grid-gap-lg: 3rem;      /* 48px - Large grid gap */
+  --spacing-grid-gap-sm: 1.5rem;    /* 24px - Small grid gap */
+  
+  --spacing-card-padding: 2rem;     /* 32px - Standard card padding */
+  --spacing-card-padding-lg: 3rem;  /* 48px - Large card padding */
+  
+  --spacing-element-gap: 1.5rem;    /* 24px - Gap between elements within a component */
+  --spacing-element-gap-sm: 1rem;   /* 16px - Small gap between elements */
+  
+  /* Content Width Constraints */
+  --content-max-width: 80rem;       /* 1280px - max-w-7xl equivalent */
+  --content-text-width: 48rem;      /* 768px - max-w-3xl for readable text */
+  --content-text-width-lg: 56rem;   /* 896px - max-w-4xl for wider text */
+  
+  /* Horizontal Page Padding System - IDENTICAL TO LIGHT THEME */
+  --spacing-page-x: 3rem;           /* 48px - Desktop horizontal padding (≥1280px) */
+  --spacing-page-x-md: 1.5rem;      /* 24px - Tablet horizontal padding (768-1279px) */
+  --spacing-page-x-sm: 1rem;        /* 16px - Mobile horizontal padding (<768px) */
+}
+
+/* Dark Theme */
+:root[data-theme="dark"] {
+  /* Background Colors */
+  --bg-primary: #020617;
+  --bg-secondary: #0F172A;
+  --bg-card: rgba(15, 23, 42, 0.5);
+  --bg-hover: rgba(30, 41, 59, 0.6);
+  
+  /* Text Colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-inverse: #1A1A1A;
+  
+  /* Accent Colors */
+  --accent-primary: #3B82F6;
+  --accent-primary-hover: #60A5FA;
+  --accent-secondary: #10B981;
+  --accent-secondary-hover: #34D399;
+  
+  /* Border & Divider */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.2);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.5);
+  --shadow-accent: 0 4px 12px rgba(59, 130, 246, 0.3);
+  
+  /* Toggle Button */
+  --toggle-bg: #1F2937;
+  --toggle-border: #374151;
+  --toggle-icon: #60A5FA;
+  
+  /* Neural Patterns */
+  --neural-line: rgba(59, 130, 246, 0.35);  /* Enhanced visibility from 0.3 to 0.35 */
+  --neural-orb: rgba(59, 130, 246, 0.2);
+  
+  /* Input Fields */
+  --input-bg: rgba(15, 23, 42, 0.5);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --input-focus-border: #3B82F6;
+  --input-focus-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  
+  /* Glassmorphism Header - Dark Theme */
+  --header-glass-bg: rgba(2, 6, 23, 0.70);
+  --header-glass-border: rgba(59, 130, 246, 0.2);
+  --header-glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --header-glass-blur: blur(20px);
+  
+  /* Consistent Spacing System - IDENTICAL TO LIGHT THEME */
+  --spacing-section-y: 6rem;        /* 96px - Standard vertical section padding */
+  --spacing-section-y-lg: 8rem;     /* 128px - Large vertical section padding */
+  --spacing-section-y-sm: 4rem;     /* 64px - Small vertical section padding */
+  
+  --spacing-content-gap: 4rem;      /* 64px - Gap between section header and content */
+  --spacing-content-gap-sm: 3rem;   /* 48px - Smaller gap for tighter sections */
+  
+  --spacing-grid-gap: 2rem;         /* 32px - Standard grid gap */
+  --spacing-grid-gap-lg: 3rem;      /* 48px - Large grid gap */
+  --spacing-grid-gap-sm: 1.5rem;    /* 24px - Small grid gap */
+  
+  --spacing-card-padding: 2rem;     /* 32px - Standard card padding */
+  --spacing-card-padding-lg: 3rem;  /* 48px - Large card padding */
+  
+  --spacing-element-gap: 1.5rem;    /* 24px - Gap between elements within a component */
+  --spacing-element-gap-sm: 1rem;   /* 16px - Small gap between elements */
+  
+  /* Content Width Constraints */
+  --content-max-width: 80rem;       /* 1280px - max-w-7xl equivalent */
+  --content-text-width: 48rem;      /* 768px - max-w-3xl for readable text */
+  --content-text-width-lg: 56rem;   /* 896px - max-w-4xl for wider text */
+}
+
+/* ============================================
+   SMOOTH THEME TRANSITIONS
+   ============================================ */
+
+* {
+  transition-property: background-color, color, border-color, box-shadow, fill, stroke;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Disable transitions on page load to prevent flash */
+.no-transition * {
+  transition: none !important;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-card {
+  background-color: var(--bg-card);
+}
+
+/* Light mode background utilities */
+:root[data-theme="light"] .bg-alternate {
+  background-color: var(--bg-alternate);
+}
+
+:root[data-theme="light"] .bg-light-blue {
+  background-color: #E2F2FF;
+}
+
+:root[data-theme="light"] .bg-light-white {
+  background-color: #FFFFFF;
+}
+
+:root[data-theme="light"] .bg-light-subtle {
+  background-color: #F7FBFF;
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.border-default {
+  border-color: var(--border-color);
+}
+
+.shadow-default {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-elevated {
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============================================
+   FOCUS STATES (Accessibility)
+   ============================================ */
+
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   LINK HOVER INTERACTIONS - PREMIUM MICRO-LIFT
+   ============================================ */
+
+/* Define link hover colors for both themes */
+:root[data-theme="light"] {
+  --link-hover-color: #0054A6;        /* Brand blue */
+}
+
+:root[data-theme="dark"] {
+  --link-hover-color: #DDEBFA;        /* Light aqua/blue for dark mode */
+}
+
+/* Global link hover behavior - Brand blue + semi-bold + micro-lift on hover */
+/* Exclude card containers, buttons, and components with custom hover effects */
+a:not(.group):not([class*="px-"]):not([class*="button"]):not([class*="btn"]) {
+  display: inline-block;
+  transition: color 180ms ease-in-out, font-weight 180ms ease-in-out, transform 180ms ease-in-out;
+  text-decoration: none;
+}
+
+/* Text-based links hover: color change + bold + micro-lift */
+/* Targets inline text links, navigation items, footer links, list links */
+a:not(.group):not([class*="px-"]):not([class*="button"]):not([class*="btn"]):hover,
+a:not(.group):not([class*="px-"]):not([class*="button"]):not([class*="btn"]):focus-visible {
+  color: var(--link-hover-color) !important;
+  font-weight: 650 !important;
+  text-decoration: none !important;
+  transform: translateY(-2px);
+}
+
+/* Specific targeting for navigation menu items */
+nav a[class*="px-"],
+nav button[class*="px-"] {
+  transition: color 180ms ease-in-out, transform 180ms ease-in-out;
+}
+
+nav a[class*="px-"]:hover,
+nav a[class*="px-"]:focus-visible,
+nav button[class*="px-"]:hover,
+nav button[class*="px-"]:focus-visible {
+  transform: translateY(-2px);
+}
+
+nav a[class*="px-"]:hover span,
+nav a[class*="px-"]:focus-visible span,
+nav button[class*="px-"]:hover span,
+nav button[class*="px-"]:focus-visible span {
+  color: var(--link-hover-color) !important;
+  font-weight: 650 !important;
+}
+
+/* Footer column links */
+footer ul li a {
+  display: inline-block;
+  transition: color 180ms ease-in-out, font-weight 180ms ease-in-out, transform 180ms ease-in-out;
+}
+
+footer ul li a:hover,
+footer ul li a:focus-visible {
+  color: var(--link-hover-color) !important;
+  font-weight: 650 !important;
+  text-decoration: none !important;
+  transform: translateY(-2px);
+}
+
+/* Footer contact links (email, phone) */
+footer a[href^="mailto:"],
+footer a[href^="tel:"] {
+  display: inline-block;
+  transition: color 180ms ease-in-out, font-weight 180ms ease-in-out, transform 180ms ease-in-out;
+}
+
+footer a[href^="mailto:"]:hover,
+footer a[href^="mailto:"]:focus-visible,
+footer a[href^="tel:"]:hover,
+footer a[href^="tel:"]:focus-visible {
+  color: var(--link-hover-color) !important;
+  font-weight: 650 !important;
+  text-decoration: none !important;
+  transform: translateY(-2px);
+}
+
+/* Breadcrumb links */
+nav[aria-label="breadcrumb"] a,
+.breadcrumb-item a {
+  display: inline-block;
+  transition: color 180ms ease-in-out, font-weight 180ms ease-in-out, transform 180ms ease-in-out;
+}
+
+nav[aria-label="breadcrumb"] a:hover,
+nav[aria-label="breadcrumb"] a:focus-visible,
+.breadcrumb-item a:hover,
+.breadcrumb-item a:focus-visible {
+  color: var(--link-hover-color) !important;
+  font-weight: 650 !important;
+  text-decoration: none !important;
+  transform: translateY(-2px);
+}
+
+/* Article/content text links */
+article a:not(.group),
+.article-content a:not(.group),
+.content a:not(.group),
+p a:not(.group) {
+  display: inline-block;
+  transition: color 180ms ease-in-out, font-weight 180ms ease-in-out, transform 180ms ease-in-out;
+}
+
+article a:not(.group):hover,
+article a:not(.group):focus-visible,
+.article-content a:not(.group):hover,
+.article-content a:not(.group):focus-visible,
+.content a:not(.group):hover,
+.content a:not(.group):focus-visible,
+p a:not(.group):hover,
+p a:not(.group):focus-visible {
+  color: var(--link-hover-color) !important;
+  font-weight: 650 !important;
+  text-decoration: none !important;
+  transform: translateY(-2px);
+}
+
+/* List item text links */
+ul:not([class*="space-x"]) li a:not(.group),
+ol li a:not(.group) {
+  display: inline-block;
+  transition: color 180ms ease-in-out, font-weight 180ms ease-in-out, transform 180ms ease-in-out;
+}
+
+ul:not([class*="space-x"]) li a:not(.group):hover,
+ul:not([class*="space-x"]) li a:not(.group):focus-visible,
+ol li a:not(.group):hover,
+ol li a:not(.group):focus-visible {
+  color: var(--link-hover-color) !important;
+  font-weight: 650 !important;
+  text-decoration: none !important;
+  transform: translateY(-2px);
+}
+
+/* Dropdown menu text items */
+.dropdown-menu a,
+.menu-item {
+  transition: color 180ms ease-in-out, font-weight 180ms ease-in-out, transform 180ms ease-in-out;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus-visible,
+.menu-item:hover,
+.menu-item:focus-visible {
+  transform: translateY(-2px);
+}
+
+.dropdown-menu a span,
+.menu-item span {
+  transition: color 180ms ease-in-out, font-weight 180ms ease-in-out;
+}
+
+.dropdown-menu a:hover span,
+.dropdown-menu a:focus-visible span,
+.menu-item:hover span,
+.menu-item:focus-visible span {
+  color: var(--link-hover-color) !important;
+  font-weight: 650 !important;
+}
+
+/* Back links and utility links */
+a[class*="inline-flex"]:not(.group) {
+  transition: color 180ms ease-in-out, font-weight 180ms ease-in-out, transform 180ms ease-in-out;
+}
+
+a[class*="inline-flex"]:hover:not(.group),
+a[class*="inline-flex"]:focus-visible:not(.group) {
+  color: var(--link-hover-color) !important;
+  font-weight: 650 !important;
+  text-decoration: none !important;
+  transform: translateY(-2px);
+}
+
+/* Service card links and CTA text links */
+.service-card a,
+.card-link,
+.text-link {
+  display: inline-block;
+  transition: color 180ms ease-in-out, font-weight 180ms ease-in-out, transform 180ms ease-in-out;
+}
+
+service-card a:hover,
+.service-card a:focus-visible,
+.card-link:hover,
+.card-link:focus-visible,
+.text-link:hover,
+.text-link:focus-visible {
+  color: var(--link-hover-color) !important;
+  font-weight: 650 !important;
+  text-decoration: none !important;
+  transform: translateY(-2px);
+}
+
+/* Tags and badges with links */
+a[class*="tag"],
+a[class*="badge"] {
+  display: inline-block;
+  transition: color 180ms ease-in-out, font-weight 180ms ease-in-out, transform 180ms ease-in-out;
+}
+
+a[class*="tag"]:hover,
+a[class*="tag"]:focus-visible,
+a[class*="badge"]:hover,
+a[class*="badge"]:focus-visible {
+  color: var(--link-hover-color) !important;
+  font-weight: 650 !important;
+  transform: translateY(-2px);
+}
+
+/* Active state (on click) - slight press down effect */
+a:not(.group):not([class*="button"]):not([class*="btn"]):active {
+  transform: translateY(0) !important;
+  transition-duration: 100ms;
+}
+
+/* ============================================
+   GRADIENT DROP-SHADOW BUTTON SYSTEM
+   ============================================ */
+
+/* Keyframe for subtle gradient shadow animation */
+@keyframes shadowShift {
+  0%, 100% {
+    transform: translateY(3px) scale(0.98);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(4px) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shadowGlow {
+  0%, 100% {
+    opacity: 0.22;
+  }
+  50% {
+    opacity: 0.28;
+  }
+}
+
+/* Define gradient shadow colors for both themes */
+:root[data-theme="light"] {
+  --btn-shadow-gradient: linear-gradient(
+    90deg,
+    rgba(0, 84, 166, 0.25) 0%,
+    rgba(0, 168, 183, 0.22) 50%,
+    rgba(0, 194, 199, 0.20) 100%
+  );
+  --btn-shadow-blur: 32px;
+  --btn-shadow-spread: 12px;
+}
+
+:root[data-theme="dark"] {
+  --btn-shadow-gradient: linear-gradient(
+    90deg,
+    rgba(0, 30, 60, 0.28) 0%,
+    rgba(0, 84, 166, 0.25) 50%,
+    rgba(0, 168, 183, 0.22) 100%
+  );
+  --btn-shadow-blur: 24px;
+  --btn-shadow-spread: 10px;
+}
+
+/* Target all CTA-style buttons across the site */
+/* Primary buttons with gradient or solid backgrounds */
+a[class*="inline-flex"][class*="px-8"],
+a[class*="inline-flex"][class*="px-6"][class*="py-"],
+button[class*="inline-flex"][class*="px-8"],
+button[class*="px-8"][class*="py-4"],
+button[class*="px-6"][class*="py-3"],
+button[type="submit"][class*="px-"],
+a[class*="px-8"][class*="py-4"],
+.cta-button,
+.primary-button,
+.btn-primary {
+  position: relative;
+  isolation: isolate;
+  transition: transform 350ms ease-in-out, box-shadow 350ms ease-in-out;
+}
+
+/* Gradient drop-shadow pseudo-element - positioned beneath button */
+a[class*="inline-flex"][class*="px-8"]::before,
+a[class*="inline-flex"][class*="px-6"][class*="py-"]::before,
+button[class*="inline-flex"][class*="px-8"]::before,
+button[class*="px-8"][class*="py-4"]::before,
+button[class*="px-6"][class*="py-3"]::before,
+button[type="submit"][class*="px-"]::before,
+a[class*="px-8"][class*="py-4"]::before,
+.cta-button::before,
+.primary-button::before,
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 100%;
+  background: var(--btn-shadow-gradient);
+  border-radius: inherit;
+  filter: blur(var(--btn-shadow-blur));
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 350ms ease-in-out, transform 350ms ease-in-out;
+  pointer-events: none;
+}
+
+/* Hover state - reveal and animate gradient drop-shadow */
+a[class*="inline-flex"][class*="px-8"]:hover,
+a[class*="inline-flex"][class*="px-6"][class*="py-"]:hover,
+button[class*="inline-flex"][class*="px-8"]:hover,
+button[class*="px-8"][class*="py-4"]:hover,
+button[class*="px-6"][class*="py-3"]:hover,
+button[type="submit"][class*="px-"]:hover,
+a[class*="px-8"][class*="py-4"]:hover,
+.cta-button:hover,
+.primary-button:hover,
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+a[class*="inline-flex"][class*="px-8"]:hover::before,
+a[class*="inline-flex"][class*="px-6"][class*="py-"]:hover::before,
+button[class*="inline-flex"][class*="px-8"]:hover::before,
+button[class*="px-8"][class*="py-4"]:hover::before,
+button[class*="px-6"][class*="py-3"]:hover::before,
+button[type="submit"][class*="px-"]:hover::before,
+a[class*="px-8"][class*="py-4"]:hover::before,
+.cta-button:hover::before,
+.primary-button:hover::before,
+.btn-primary:hover::before {
+  opacity: 1;
+  transform: translateY(2px) scale(1.05);
+  animation: shadowGlow 2.5s ease-in-out infinite;
+}
+
+/* Focus-visible state for accessibility */
+a[class*="inline-flex"][class*="px-8"]:focus-visible::before,
+a[class*="inline-flex"][class*="px-6"][class*="py-"]:focus-visible::before,
+button[class*="inline-flex"][class*="px-8"]:focus-visible::before,
+button[class*="px-8"][class*="py-4"]:focus-visible::before,
+button[class*="px-6"][class*="py-3"]:focus-visible::before,
+button[type="submit"][class*="px-"]:focus-visible::before,
+a[class*="px-8"][class*="py-4"]:focus-visible::before,
+.cta-button:focus-visible::before,
+.primary-button:focus-visible::before,
+.btn-primary:focus-visible::before {
+  opacity: 1;
+  transform: translateY(2px) scale(1.05);
+}
+
+/* Active/pressed state - compress shadow */
+a[class*="inline-flex"][class*="px-8"]:active,
+a[class*="inline-flex"][class*="px-6"][class*="py-"]:active,
+button[class*="inline-flex"][class*="px-8"]:active,
+button[class*="px-8"][class*="py-4"]:active,
+button[class*="px-6"][class*="py-3"]:active,
+button[type="submit"][class*="px-"]:active,
+a[class*="px-8"][class*="py-4"]:active,
+.cta-button:active,
+.primary-button:active,
+.btn-primary:active {
+  transform: translateY(0);
+  transition-duration: 100ms;
+}
+
+a[class*="inline-flex"][class*="px-8"]:active::before,
+a[class*="inline-flex"][class*="px-6"][class*="py-"]:active::before,
+button[class*="inline-flex"][class*="px-8"]:active::before,
+button[class*="px-8"][class*="py-4"]:active::before,
+button[class*="px-6"][class*="py-3"]:active::before,
+button[type="submit"][class*="px-"]:active::before,
+a[class*="px-8"][class*="py-4"]:active::before,
+.cta-button:active::before,
+.primary-button:active::before,
+.btn-primary:active::before {
+  transform: translateY(1px) scale(0.95);
+  opacity: 0.5;
+  transition-duration: 100ms;
+}
+
+/* Exclusions - buttons that should NOT get the drop-shadow effect */
+button[class*="icon"]:not([class*="px-8"]),
+button[class*="toggle"],
+button[aria-label*="menu"],
+button[aria-label*="close"],
+.icon-button:not([class*="px-8"]),
+.toggle-button,
+nav button:not([class*="px-8"]) {
+  isolation: auto;
+}
+
+button[class*="icon"]:not([class*="px-8"])::before,
+button[class*="toggle"]::before,
+button[aria-label*="menu"]::before,
+button[aria-label*="close"]::before,
+.icon-button:not([class*="px-8"])::before,
+.toggle-button::before,
+nav button:not([class*="px-8"])::before {
+  display: none !important;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  a[class*="inline-flex"][class*="px-"]::before,
+  button[class*="px-"]::before,
+  .cta-button::before,
+  .primary-button::before,
+  .btn-primary::before {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   COMPONENT-SPECIFIC OVERRIDES
+   ============================================ */
+
+/* Gradient shimmer animation for premium microinteraction */
+@keyframes gradientShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Ensure gradient text works in both themes */
+.gradient-text {
+  background: linear-gradient(135deg, #3B82F6 0%, #22D3EE 50%, #A855F7 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 900ms ease-in-out;
+  font-weight: 600; /* Semibold weight for emphasized keywords */
+}
+
+/* Exception: Do not apply semibold in hero banners */
+section[class*="hero"] .gradient-text,
+.hero-section .gradient-text,
+[class*="Hero"] .gradient-text {
+  font-weight: inherit;
+}
+
+/* Hover state - trigger shimmer animation */
+.gradient-text:hover,
+h1:has(.gradient-text):hover .gradient-text,
+h2:has(.gradient-text):hover .gradient-text,
+h3:has(.gradient-text):hover .gradient-text,
+h4:has(.gradient-text):hover .gradient-text {
+  animation: gradientShimmer 1200ms ease-in-out forwards;
+}
+
+/* Scroll reveal shimmer - apply class via JS when in viewport */
+.gradient-text.animate-shimmer {
+  animation: gradientShimmer 1200ms ease-in-out forwards;
+}
+
+/* Brand gradient text for light mode */
+:root[data-theme="light"] .gradient-text-brand {
+  background: var(--gradient-blue-aqua);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 900ms ease-in-out;
+  font-weight: 600; /* Semibold weight for emphasized keywords */
+}
+
+/* Exception: Do not apply semibold to brand gradient in hero banners */
+section[class*="hero"] .gradient-text-brand,
+.hero-section .gradient-text-brand,
+[class*="Hero"] .gradient-text-brand {
+  font-weight: inherit;
+}
+
+/* Hover state for brand gradient text */
+.gradient-text-brand:hover,
+h1:has(.gradient-text-brand):hover .gradient-text-brand,
+h2:has(.gradient-text-brand):hover .gradient-text-brand,
+h3:has(.gradient-text-brand):hover .gradient-text-brand,
+h4:has(.gradient-text-brand):hover .gradient-text-brand {
+  animation: gradientShimmer 1200ms ease-in-out forwards;
+}
+
+/* Scroll reveal for brand gradient */
+.gradient-text-brand.animate-shimmer {
+  animation: gradientShimmer 1200ms ease-in-out forwards;
+}
+
+/* Brand color utilities for light mode */
+:root[data-theme="light"] .text-brand-blue {
+  color: var(--accent-primary);
+}
+
+:root[data-theme="light"] .text-brand-aqua {
+  color: var(--accent-aqua);
+}
+
+:root[data-theme="light"] .text-brand-cyan {
+  color: var(--accent-cyan);
+}
+
+:root[data-theme="light"] .text-brand-navy {
+  color: var(--accent-navy);
+}
+
+/* Border accent for light mode */
+:root[data-theme="light"] .border-accent {
+  border-color: var(--border-accent);
+}
+
+/* Neural network patterns */
+.neural-pattern {
+  background-image: 
+    linear-gradient(90deg, var(--neural-line) 1px, transparent 1px),
+    linear-gradient(0deg, var(--neural-line) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* ============================================
+   SOCIAL ICON LINKS
+   ============================================ */
+
+/* Social icon link hover effects */
+.social-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  transition: all 150ms ease-in-out;
+}
+
+.social-icon-link:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.social-icon-link:active {
+  transform: scale(0.98);
+}
+
+/* Ensure adequate tap target on mobile */
+@media (max-width: 768px) {
+  .social-icon-link {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* ============================================
+   CAROUSEL & ANIMATION UTILITIES
+   ============================================ */
+
+/* Responsive logo sizing for client carousel */
+.client-logo-container {
+  width: 80px;
+  height: 80px;
+}
+
+@media (min-width: 768px) {
+  .client-logo-container {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .client-logo-container {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Fade in up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   SLICK CAROUSEL CUSTOMIZATION
+   ============================================ */
+
+/* Hide default slick arrows - we use custom ones */
+.slick-slider .slick-prev,
+.slick-slider .slick-next {
+  display: none !important;
+}
+
+/* Slick dots customization */
+.slick-dots {
+  position: relative;
+  bottom: 0;
+  list-style: none;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.slick-dots li {
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+.slick-dots li button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.slick-dots li button:before {
+  display: none;
+}
+
+/* Slick track spacing */
+.slick-track {
+  display: flex;
+  align-items: stretch;
+}
+
+.slick-slide {
+  height: inherit;
+}
+
+.slick-slide > div {
+  height: 100%;
+}
+
+.slick-list {
+  overflow: hidden;
+  margin: 0 -12px;
+}
+
+/* ============================================
+   SNOW BALL LOADING SPINNER
+   ============================================ */
+
+/* THEME-AWARE GRADIENT VARIABLES */
+:root {
+  --loader-gradient-start: #04d4f4; /* light theme brand gradient */
+  --loader-gradient-mid: #0d6cfd;
+  --loader-gradient-end: #8a5bff;
+}
+
+.dark {
+  /* deeper but same-hue gradient for dark mode */
+  --loader-gradient-start: #00a8d1;
+  --loader-gradient-mid: #0056c9;
+  --loader-gradient-end: #7443ec;
+}
+
+/* Base loader layout */
+.pl {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+}
+
+/* Outer & inner rings */
+.pl__outer-ring,
+.pl__inner-ring,
+.pl__gradient-track,
+.pl__track-cover {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+}
+
+/* GRADIENT TRACK – ONLY STROKE, NOT FILL */
+.pl__gradient-track {
+  /* Conic gradient using theme variables */
+  background: conic-gradient(
+    from 0deg,
+    var(--loader-gradient-start),
+    var(--loader-gradient-mid),
+    var(--loader-gradient-end),
+    var(--loader-gradient-start)
+  );
+  /* Show as stroke by masking out the center */
+  -webkit-mask: radial-gradient(farthest-side, transparent 60%, #000 63%);
+  mask: radial-gradient(farthest-side, transparent 60%, #000 63%);
+  animation: gradientTrail 1.6s linear infinite;
+  opacity: 0.9;
+}
+
+/* Optional base track color behind gradient */
+.pl__outer-ring {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9), transparent);
+  opacity: 0.4;
+}
+
+/* Inner ring subtle background */
+.pl__inner-ring {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.05), transparent 70%);
+  opacity: 0.6;
+}
+
+/* Track cover for depth effect */
+.pl__track-cover {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0) 55%,
+    rgba(255, 255, 255, 0.1) 60%,
+    transparent 65%
+  );
+}
+
+/* Snow ball */
+.pl__ball {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 9999px;
+  background: #ffffff;
+  box-shadow: 
+    0 0.5rem 1rem rgba(15, 23, 42, 0.25),
+    inset 0 -0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  transform: translate(-50%, -50%);
+  animation: ball 1.6s linear infinite;
+  overflow: hidden;
+}
+
+/* Ball texture - creates a subtle pattern on the ball */
+.pl__ball-texture {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.3) 2px,
+    rgba(255, 255, 255, 0.3) 4px
+  );
+  animation: ballTexture 2s linear infinite;
+  opacity: 0.3;
+}
+
+/* Ball outer shadow - gives depth */
+.pl__ball-outer-shadow {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.8),
+    transparent 60%
+  );
+  animation: ballOuterShadow 1.6s linear infinite;
+}
+
+/* Ball inner shadow - creates 3D effect */
+.pl__ball-inner-shadow {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle at 70% 70%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.15) 70%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  animation: ballInnerShadow 1.6s linear infinite;
+}
+
+/* Ball side shadows - adds more 3D realism */
+.pl__ball-side-shadows {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.1) 0%,
+    transparent 20%,
+    transparent 80%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+/* Animation keyframes */
+@keyframes ball {
+  from {
+    transform: rotate(0deg) translateY(-6.5em);
+  }
+  50% {
+    transform: rotate(180deg) translateY(-6em);
+  }
+  to {
+    transform: rotate(360deg) translateY(-6.5em);
+  }
+}
+
+@keyframes ballInnerShadow {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes ballOuterShadow {
+  from {
+    transform: rotate(20deg);
+  }
+  to {
+    transform: rotate(-340deg);
+  }
+}
+
+@keyframes ballTexture {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+@keyframes trackCover {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Sync the gradient trail with the ball motion */
+@keyframes gradientTrail {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

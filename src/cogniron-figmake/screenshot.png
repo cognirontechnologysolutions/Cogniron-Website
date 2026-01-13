@@ -1,0 +1,73 @@
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E2F2FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D6EBFF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="900" fill="url(#screenGrad)"/>
+  
+  <!-- Grid Pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 84, 166, 0.08)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#grid)"/>
+  
+  <!-- Header -->
+  <rect width="1200" height="80" fill="rgba(255, 255, 255, 0.75)"/>
+  <text x="60" y="50" font-family="Arial, sans-serif" font-size="24" fill="#0054A6" font-weight="bold">Cogniron</text>
+  
+  <!-- Hero Content -->
+  <text x="100" y="300" font-family="Arial, sans-serif" font-size="48" fill="#00376A" font-weight="bold">
+    Transform Quality with
+  </text>
+  <text x="100" y="360" font-family="Arial, sans-serif" font-size="48" fill="#0054A6" font-weight="bold">
+    AI-Powered Testing
+  </text>
+  
+  <text x="100" y="420" font-family="Arial, sans-serif" font-size="20" fill="#3C4A57">
+    Cogniron delivers intelligent QA solutions that predict defects,
+  </text>
+  <text x="100" y="450" font-family="Arial, sans-serif" font-size="20" fill="#3C4A57">
+    optimize workflows, and accelerate your time-to-market.
+  </text>
+  
+  <!-- CTA Buttons -->
+  <defs>
+    <linearGradient id="btnGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0054A6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00C2C7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect x="100" y="500" width="180" height="50" rx="12" fill="url(#btnGrad)"/>
+  <text x="190" y="532" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="600">
+    Get Started →
+  </text>
+  
+  <rect x="300" y="500" width="180" height="50" rx="12" fill="white" stroke="#0054A6" stroke-width="2"/>
+  <text x="390" y="532" font-family="Arial, sans-serif" font-size="16" fill="#0054A6" text-anchor="middle" font-weight="600">
+    Explore Services
+  </text>
+  
+  <!-- Hero Image Placeholder -->
+  <rect x="700" y="250" width="400" height="300" rx="24" fill="white" opacity="0.8"/>
+  <circle cx="900" cy="400" r="60" fill="#0054A6" opacity="0.2"/>
+  
+  <!-- Stats Section -->
+  <rect y="700" width="1200" height="200" fill="white"/>
+  <text x="150" y="780" font-family="Arial, sans-serif" font-size="48" fill="#0054A6" font-weight="bold" text-anchor="middle">99%</text>
+  <text x="150" y="820" font-family="Arial, sans-serif" font-size="16" fill="#3C4A57" text-anchor="middle">Client Satisfaction</text>
+  
+  <text x="400" y="780" font-family="Arial, sans-serif" font-size="48" fill="#0054A6" font-weight="bold" text-anchor="middle">500+</text>
+  <text x="400" y="820" font-family="Arial, sans-serif" font-size="16" fill="#3C4A57" text-anchor="middle">Projects Delivered</text>
+  
+  <text x="650" y="780" font-family="Arial, sans-serif" font-size="48" fill="#0054A6" font-weight="bold" text-anchor="middle">50+</text>
+  <text x="650" y="820" font-family="Arial, sans-serif" font-size="16" fill="#3C4A57" text-anchor="middle">Enterprise Clients</text>
+  
+  <text x="900" y="780" font-family="Arial, sans-serif" font-size="48" fill="#0054A6" font-weight="bold" text-anchor="middle">15Y</text>
+  <text x="900" y="820" font-family="Arial, sans-serif" font-size="16" fill="#3C4A57" text-anchor="middle">Industry Experience</text>
+</svg>

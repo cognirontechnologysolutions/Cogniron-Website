@@ -1,0 +1,107 @@
+/* Moving Border Animation for Pill Tags */
+/* Aceternity-style animated gradient border effect */
+
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Base animation keyframe */
+@keyframes borderRotate {
+  0% {
+    --border-angle: 0deg;
+  }
+  100% {
+    --border-angle: 360deg;
+  }
+}
+
+/* Moving border wrapper - apply to all pill tags */
+.moving-border-tag {
+  position: relative;
+  padding: 2px;
+  border-radius: 9999px;
+  animation: borderRotate 4s linear infinite;
+  transition: all 0.3s ease;
+  --border-angle: 0deg;
+}
+
+/* Light theme gradient */
+.moving-border-tag.light {
+  background: conic-gradient(
+    from var(--border-angle),
+    #0054A6 0%,
+    #00A8B7 25%,
+    #00C2C7 50%,
+    #0054A6 75%,
+    #0054A6 100%
+  );
+}
+
+/* Dark theme gradient */
+.moving-border-tag.dark {
+  background: conic-gradient(
+    from var(--border-angle),
+    #00A8B7 0%,
+    #00C2C7 25%,
+    #DDEBFA 50%,
+    #00A8B7 75%,
+    #00A8B7 100%
+  );
+}
+
+/* Inner content - static fill */
+.moving-border-tag-inner {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+}
+
+/* Light theme inner fill */
+.moving-border-tag-inner.light {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Dark theme inner fill */
+.moving-border-tag-inner.dark {
+  background-color: rgba(15, 23, 42, 0.95);
+}
+
+/* Hover state - glow effect on border only */
+.moving-border-tag:hover.light {
+  filter: drop-shadow(0 0 8px rgba(0, 84, 166, 0.3));
+}
+
+.moving-border-tag:hover.dark {
+  filter: drop-shadow(0 0 8px rgba(0, 194, 199, 0.4));
+}
+
+/* Optional: Slower animation for subtlety */
+.moving-border-tag.slow {
+  animation-duration: 5s;
+}
+
+/* Optional: Faster animation for emphasis */
+.moving-border-tag.fast {
+  animation-duration: 3s;
+}
+
+/* Pause animation on reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .moving-border-tag {
+    animation: none;
+  }
+  
+  .moving-border-tag {
+    background: linear-gradient(90deg, #0054A6, #00A8B7, #00C2C7);
+  }
+  
+  .moving-border-tag.dark {
+    background: linear-gradient(90deg, #00A8B7, #00C2C7, #DDEBFA);
+  }
+}

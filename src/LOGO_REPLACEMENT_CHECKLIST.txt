@@ -1,0 +1,277 @@
+╔════════════════════════════════════════════════════════════╗
+║         COGNIRON LOGO REPLACEMENT - QUICK CHECKLIST       ║
+║                      (5-10 Minutes)                        ║
+╚════════════════════════════════════════════════════════════╝
+
+STEP 1: EXPORT FROM FIGMA
+────────────────────────────────────────────────────────────
+☐ Open Figma with your Cogniron logo designs
+
+☐ Select FULL LOGO (with text "COGNIRON LIMITLESS POSSIBILITIES")
+  ☐ Right-click → Export → PNG
+  ☐ Scale: 2x or 3x (for retina displays)
+  ☐ Click Export
+  ☐ Save as: cogniron-logo-light.png
+
+☐ Select LOGO MARK (just the "C" icon)
+  ☐ Right-click → Export → PNG
+  ☐ Scale: 2x or 3x (for retina displays)
+  ☐ Click Export
+  ☐ Save as: cogniron-logo-dark.png
+
+
+STEP 2: REPLACE PLACEHOLDER FILES
+────────────────────────────────────────────────────────────
+☐ Navigate to project folder: /public/logos/
+
+☐ Current files (placeholders):
+  ☐ cogniron-logo-light.png (text placeholder)
+  ☐ cogniron-logo-dark.png (text placeholder)
+
+☐ Replace with your exported files:
+  ☐ Delete old cogniron-logo-light.png
+  ☐ Copy new cogniron-logo-light.png to /public/logos/
+  ☐ Delete old cogniron-logo-dark.png
+  ☐ Copy new cogniron-logo-dark.png to /public/logos/
+
+☐ Verify filenames are EXACT:
+  ☐ cogniron-logo-light.png (lowercase, hyphen, .png)
+  ☐ cogniron-logo-dark.png (lowercase, hyphen, .png)
+
+
+STEP 3: TEST LOCALLY
+────────────────────────────────────────────────────────────
+☐ Open terminal in project folder
+
+☐ Start dev server:
+  Command: npm run dev
+
+☐ Open browser: http://localhost:3000
+
+☐ Visual checks:
+  ☐ Header shows logo (top navigation bar)
+  ☐ Footer shows logo (bottom of page)
+  ☐ Logo is clear and not blurry
+  ☐ Logo is appropriate size
+
+☐ Theme toggle test:
+  ☐ Click theme toggle icon (sun/moon in header)
+  ☐ Switch to DARK mode
+    ☐ Logo changes to logo mark (dark version)
+  ☐ Switch to LIGHT mode
+    ☐ Logo changes to full logo (light version)
+
+☐ Navigation test:
+  ☐ Click "About" in navigation
+  ☐ Logo still shows in header and footer
+  ☐ Click "Services" in navigation
+  ☐ Logo still shows in header and footer
+
+☐ Console check:
+  ☐ Press F12 to open DevTools
+  ☐ Go to Console tab
+  ☐ Verify NO errors about:
+    ☐ "Failed to load resource"
+    ☐ "404" errors for logo files
+    ☐ "Module not found"
+
+
+STEP 4: COMMIT TO GIT
+────────────────────────────────────────────────────────────
+☐ Check Git status:
+  Command: git status
+  ☐ Verify logo files show as changed/new
+
+☐ Add logo files:
+  Command: git add public/logos/cogniron-logo-light.png
+  Command: git add public/logos/cogniron-logo-dark.png
+
+☐ Or add all at once:
+  Command: git add public/logos/*.png
+
+☐ Check staged files:
+  Command: git status
+  ☐ Both logo files should be green (staged)
+
+☐ Commit the changes:
+  Command: git commit -m "Add Cogniron brand logo PNG assets for deployment"
+
+☐ Verify commit:
+  Command: git log -1 --stat
+  ☐ Should show logo files in commit
+
+
+STEP 5: PUSH TO GITHUB
+────────────────────────────────────────────────────────────
+☐ Push to repository:
+  Command: git push origin main
+  (or: git push origin master, depending on branch name)
+
+☐ Wait for push to complete
+  ☐ No errors displayed
+
+☐ Verify on GitHub.com:
+  ☐ Open your repository on GitHub
+  ☐ Navigate to: /public/logos/
+  ☐ cogniron-logo-light.png is visible
+  ☐ cogniron-logo-dark.png is visible
+  ☐ Click each file to preview
+  ☐ Both files show logo images (not text)
+
+
+STEP 6: WAIT FOR DEPLOYMENT
+────────────────────────────────────────────────────────────
+☐ Check deployment status
+  ☐ GitHub Actions tab (if using)
+  ☐ Deployment platform dashboard
+  ☐ Wait for "Deployment successful" message
+
+☐ Typical deployment time: 1-5 minutes
+
+
+STEP 7: VERIFY DEPLOYED SITE
+────────────────────────────────────────────────────────────
+☐ Open deployed website URL: ___________________________
+
+☐ Visual checks:
+  ☐ Homepage header shows logo
+  ☐ Homepage footer shows logo
+  ☐ Logo is clear (not pixelated or blurry)
+  ☐ Logo has correct colors
+
+☐ Theme toggle:
+  ☐ Click theme toggle icon
+  ☐ Switch to DARK mode
+    ☐ Logo changes to dark version
+  ☐ Switch to LIGHT mode
+    ☐ Logo changes to light version
+
+☐ Page navigation:
+  ☐ Go to About page → logo shows
+  ☐ Go to Services page → logo shows
+  ☐ Go to Contact page → logo shows
+  ☐ Back to Homepage → logo shows
+
+☐ Browser DevTools check:
+  ☐ Press F12
+  ☐ Network tab → Filter: Img
+  ☐ Reload page (Ctrl+R)
+  ☐ cogniron-logo-light.png → Status: 200 ✓
+  ☐ cogniron-logo-dark.png → Status: 200 ✓
+  ☐ No 404 errors
+
+☐ Console check:
+  ☐ Console tab
+  ☐ No errors about missing images
+  ☐ No "Failed to load resource" errors
+
+
+STEP 8: MOBILE TESTING
+────────────────────────────────────────────────────────────
+☐ Open site on mobile device
+  OR
+☐ Use DevTools mobile view:
+  ☐ F12 → Toggle device toolbar (Ctrl+Shift+M)
+  ☐ Select mobile device (iPhone, Samsung, etc.)
+
+☐ Mobile checks:
+  ☐ Logo displays correctly
+  ☐ Logo scales appropriately
+  ☐ Logo doesn't overlap navigation
+  ☐ Theme toggle works on mobile
+  ☐ Logo switches between light/dark
+
+
+COMPLETION VERIFICATION
+────────────────────────────────────────────────────────────
+☐ All tests passed
+☐ Logo shows on live site
+☐ Theme switching works
+☐ No broken images
+☐ No console errors
+☐ Mobile display correct
+
+Date completed: _______________
+Completed by: _______________
+Deployment URL: _______________
+
+╔════════════════════════════════════════════════════════════╗
+║                    ✅ LOGO FIX COMPLETE                    ║
+╚════════════════════════════════════════════════════════════╝
+
+
+TROUBLESHOOTING
+────────────────────────────────────────────────────────────
+PROBLEM: Logo shows placeholder text locally
+SOLUTION: 
+  - You haven't replaced the PNG files yet
+  - Follow Steps 1-2 above
+  - Ensure files are actual PNG images, not text
+
+PROBLEM: Logo not showing locally
+SOLUTION:
+  - Verify PNG files exist in /public/logos/
+  - Check filenames are exact (case-sensitive)
+  - Stop dev server (Ctrl+C) and restart: npm run dev
+  - Clear browser cache: Ctrl+Shift+R
+
+PROBLEM: Logo not showing on deployed site
+SOLUTION:
+  - Verify files were committed to Git
+  - Check files are on GitHub.com
+  - Wait for deployment to complete (1-5 min)
+  - Hard refresh browser: Ctrl+Shift+R
+  - Check browser console for 404 errors
+
+PROBLEM: Logo is blurry/pixelated
+SOLUTION:
+  - Re-export from Figma at higher scale (3x instead of 2x)
+  - Recommended export size: 400px × 80px
+  - Replace files and re-commit
+
+PROBLEM: Theme toggle doesn't change logo
+SOLUTION:
+  - Verify both PNG files exist:
+    - cogniron-logo-light.png
+    - cogniron-logo-dark.png
+  - Clear browser cache
+  - Check browser console for errors
+
+
+QUICK REFERENCE COMMANDS
+────────────────────────────────────────────────────────────
+npm run dev              # Start development server
+npm run build            # Build for production
+git status               # Check file changes
+git add public/logos/*   # Add logo files
+git commit -m "message"  # Commit changes
+git push origin main     # Push to GitHub
+git log -1 --stat        # Verify last commit
+
+
+DOCUMENTATION
+────────────────────────────────────────────────────────────
+LOGO_SETUP_GUIDE.md          - Detailed instructions
+LOGO_FIX_COMPLETE.md         - Technical summary
+public/logos/README.md       - Asset management
+README_LOGO_ASSET_FIX.md     - Quick overview
+
+
+SUCCESS CRITERIA
+────────────────────────────────────────────────────────────
+✓ PNG files exist in /public/logos/
+✓ Files are actual images (not text placeholders)
+✓ Local dev server shows logos
+✓ Light mode shows full logo
+✓ Dark mode shows logo mark
+✓ No console errors
+✓ Files committed to Git
+✓ Files visible on GitHub
+✓ Deployed site shows logos
+✓ Theme switching works on deployed site
+✓ Mobile display correct
+
+
+ESTIMATED TIME: 5-10 minutes
+DIFFICULTY: Easy (file replacement only)
+NO CODE CHANGES NEEDED: All code already updated
