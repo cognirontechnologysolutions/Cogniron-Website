@@ -9,3 +9,7 @@
 
   Run `npm run dev` to start the development server.
   
+
+## Secrets
+
+Do not commit production secrets to the repo. The `SUPABASE_SERVICE_ROLE_KEY` is a highly privileged key and must only be set in your deployment or server-side environment secrets (e.g., Vercel/Netlify/Heroku project secrets or Supabase Function environment variables). Keep only `VITE_SUPABASE_PUBLISHABLE_KEY` (publishable/client key) in local `.env` for development and never push the real `.env` to source control.
