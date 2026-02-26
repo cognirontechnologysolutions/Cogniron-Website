@@ -23,9 +23,10 @@ import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 export function CareersPage() {
   const { theme } = useTheme();
   useGradientShimmer();
-  const [teamFilter, setTeamFilter] = useState('all');
-  const [workTypeFilter, setWorkTypeFilter] = useState('all');
+  // const [teamFilter, setTeamFilter] = useState('all');
+  // const [workTypeFilter, setWorkTypeFilter] = useState('all');
 
+  /* Currently not hiring - job postings hidden
   const openPositions = [
     {
       title: 'Senior QA Automation Engineer',
@@ -70,6 +71,8 @@ export function CareersPage() {
       description: 'Design and implement custom testing solutions for Fortune 500 companies.',
     },
   ];
+  */
+  const openPositions = [];
 
   const lifeHighlights = [
     {
@@ -80,25 +83,25 @@ export function CareersPage() {
     {
       icon: TrendingUp,
       title: 'Growth & Learning',
-      description: '$3,000/year learning budget plus mentorship and clear career paths.',
+      description: 'Mentorship, knowledge sharing, and meaningful opportunities to keep growing.',
     },
     {
       icon: Heart,
       title: 'Work-Life Balance',
-      description: 'Unlimited PTO, flexible hours, and hybrid/remote work options.',
+      description: 'A supportive team culture that values balance, sustainability, and wellbeing.',
     },
     {
       icon: Globe,
       title: 'Global Team',
-      description: 'Offices in SF, London, and Singapore with 40% fully remote.',
+      description: 'Collaboration across teams and time zones to solve meaningful problems together.',
     },
   ];
 
-  const filteredPositions = openPositions.filter((position) => {
-    const matchesTeam = teamFilter === 'all' || position.team === teamFilter;
-    const matchesWorkType = workTypeFilter === 'all' || position.location.toLowerCase().includes(workTypeFilter.toLowerCase());
-    return matchesTeam && matchesWorkType;
-  });
+  // const filteredPositions = openPositions.filter((position) => {
+  //   const matchesTeam = teamFilter === 'all' || position.team === teamFilter;
+  //   const matchesWorkType = workTypeFilter === 'all' || position.location.toLowerCase().includes(workTypeFilter.toLowerCase());
+  //   return matchesTeam && matchesWorkType;
+  // });
 
   return (
     <PageContainer>
@@ -225,7 +228,6 @@ export function CareersPage() {
         </div>
       </section>
 
-      {/* Open Positions Section */}
       <section
         id="open-positions"
         className="relative py-24"
@@ -241,131 +243,41 @@ export function CareersPage() {
               <SectionTag text="Work With Us" icon={Briefcase} />
             </div>
             <h2 className="text-4xl md:text-5xl mb-6 max-w-3xl mx-auto" style={{ color: 'var(--text-primary)' }}>
-              Open Positions
+              Currently Not Hiring
             </h2>
             <p className="text-xl max-w-3xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
-              Browse current opportunities across engineering, product, customer success, and more. We're hiring across all our global offices and remote positions.
+              We do not have any open roles right now. We are still happy to hear from exceptional people interested in future opportunities.
             </p>
           </div>
 
-          {/* Filters */}
-          <div className="mb-12 flex gap-4 justify-center" style={{ maxWidth: '800px', margin: '0 auto 3rem' }}>
-            {/* Team Filter */}
-            <select
-              value={teamFilter}
-              onChange={(e) => setTeamFilter(e.target.value)}
-              className="px-4 py-2.5 rounded-lg transition-all duration-200"
+          <div
+            className="max-w-2xl mx-auto text-center backdrop-blur-sm rounded-2xl p-12"
+            style={{
+              backgroundColor: 'var(--bg-card)',
+              border: '1px solid var(--border-color)',
+              boxShadow: 'var(--shadow-md)',
+            }}
+          >
+            <Sparkles className="w-16 h-16 mx-auto mb-4" style={{ color: 'var(--accent-primary)' }} />
+            <h3 className="text-2xl mb-3" style={{ color: 'var(--text-primary)' }}>
+              We're Building Something Incredible
+            </h3>
+            <p className="mb-8" style={{ color: 'var(--text-secondary)' }}>
+              We're not actively hiring at the moment, but we're always looking for exceptional talent to join Cogniron. If you're interested in future opportunities or want to explore how you can contribute to our mission, we'd love to hear from you.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
               style={{
-                backgroundColor: 'var(--bg-card)',
-                border: `1px solid var(--border-color)`,
-                color: 'var(--text-primary)',
-                boxShadow: 'var(--shadow-sm)',
+                background: 'linear-gradient(135deg, #2563EB 0%, #06B6D4 100%)',
+                color: '#FFFFFF',
+                boxShadow: 'var(--shadow-accent)',
               }}
             >
-              <option value="all">All Teams</option>
-              <option value="Engineering">Engineering</option>
-              <option value="Product">Product</option>
-              <option value="Customer Success">Customer Success</option>
-            </select>
-
-            {/* Work Type Filter */}
-            <select
-              value={workTypeFilter}
-              onChange={(e) => setWorkTypeFilter(e.target.value)}
-              className="px-4 py-2.5 rounded-lg transition-all duration-200"
-              style={{
-                backgroundColor: 'var(--bg-card)',
-                border: `1px solid var(--border-color)`,
-                color: 'var(--text-primary)',
-                boxShadow: 'var(--shadow-sm)',
-              }}
-            >
-              <option value="all">All Work Types</option>
-              <option value="remote">Remote</option>
-              <option value="hybrid">Hybrid</option>
-              <option value="onsite">Onsite</option>
-            </select>
+              Get In Touch
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
           </div>
-
-          {/* Job List */}
-          {filteredPositions.length > 0 ? (
-            <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
-              {filteredPositions.map((position, index) => (
-                <div
-                  key={index}
-                  className="backdrop-blur-sm rounded-2xl p-6 transition-all duration-300 hover:scale-[1.02]"
-                  style={{
-                    backgroundColor: 'var(--bg-card)',
-                    border: '1px solid var(--border-color)',
-                    boxShadow: 'var(--shadow-md)',
-                  }}
-                >
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div className="flex-1">
-                      <h3 className="text-2xl mb-2" style={{ color: 'var(--text-primary)' }}>
-                        {position.title}
-                      </h3>
-                      <div className="flex flex-wrap gap-4 mb-3 text-sm">
-                        <div className="flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
-                          <Briefcase className="w-4 h-4" />
-                          <span>{position.team}</span>
-                        </div>
-                        <div className="flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
-                          <MapPin className="w-4 h-4" />
-                          <span>{position.location}</span>
-                        </div>
-                        <div className="flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
-                          <Clock className="w-4 h-4" />
-                          <span>{position.type}</span>
-                        </div>
-                      </div>
-                      <p style={{ color: 'var(--text-secondary)' }}>{position.description}</p>
-                    </div>
-                    <Link
-                      to="/contact"
-                      className="inline-flex items-center justify-center px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 whitespace-nowrap"
-                      style={{
-                        background: 'linear-gradient(135deg, #2563EB 0%, #06B6D4 100%)',
-                        color: '#FFFFFF',
-                        boxShadow: 'var(--shadow-accent)',
-                      }}
-                    >
-                      Apply Now
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div
-              className="max-w-2xl mx-auto text-center backdrop-blur-sm rounded-2xl p-12"
-              style={{
-                backgroundColor: 'var(--bg-card)',
-                border: '1px solid var(--border-color)',
-                boxShadow: 'var(--shadow-md)',
-              }}
-            >
-              <Search className="w-16 h-16 mx-auto mb-4" style={{ color: 'var(--text-muted)' }} />
-              <h3 className="text-2xl mb-3" style={{ color: 'var(--text-primary)' }}>
-                No positions match your filters
-              </h3>
-              <p className="mb-6" style={{ color: 'var(--text-secondary)' }}>
-                Try adjusting your filters or check back soon for new opportunities.
-              </p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg transition-all duration-300"
-                style={{
-                  backgroundColor: theme === 'dark' ? 'rgba(255, 255, 255, 0.05)' : '#FFFFFF',
-                  border: `1px solid var(--border-color)`,
-                  color: 'var(--text-primary)',
-                }}
-              >
-                Contact Us About Future Roles
-              </Link>
-            </div>
-          )}
         </div>
       </section>
 
@@ -453,14 +365,14 @@ export function CareersPage() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
-                'Premium health, dental, and vision insurance',
-                'Unlimited PTO with 4+ weeks encouraged',
-                '$3,000/year learning & development budget',
-                'Hybrid and remote work flexibility',
-                'Home office setup stipend ($1,500)',
-                '20 weeks paid parental leave',
-                'Quarterly team offsites and events',
-                'Stock options for all employees',
+                'A collaborative, respectful team environment',
+                'Challenging work with clear ownership',
+                'Mentorship and continuous learning opportunities',
+                'Cross-functional collaboration on real customer problems',
+                'Modern tools and processes that support quality delivery',
+                'A culture that values thoughtful communication',
+                'Opportunities to contribute across initiatives',
+                'A mission-driven team focused on long-term impact',
               ].map((benefit, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: 'var(--accent-primary)' }} />

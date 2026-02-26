@@ -112,21 +112,12 @@ export function HomePage() {
       {
         name: 'Lisa Anderson',
         role: 'CEO',
-        company: 'Global Technology Enterprise',
         image: 'https://images.unsplash.com/photo-1758518729459-235dcaadc611?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMGV4ZWN1dGl2ZSUyMGhlYWRzaG90fGVufDF8fHx8MTc2NTMxMTU2OXww&ixlib=rb-4.1.0&q=80&w=1080',
         quote: 'Innovation meets reliability in quality assurance. Their AI-first approach to testing has given us a competitive edge in delivering flawless customer experiences.',
       },
       {
-        name: 'Director of Product',
-        role: 'Director of Product',
-        company: 'Leading SaaS Enterprise',
-        image: 'https://images.unsplash.com/photo-1758876021212-a87517fc8954?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9kdWN0JTIwbWFuYWdlciUyMHRlY2glMjBwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwxfHx8fDE3NjUzNzE5MDN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-        quote: 'Qualiron\'s AI-assisted QE model scaled with our growth. Their automation-first framework is now a core part of our delivery pipeline.',
-      },
-      {
         name: 'Michael Chen',
         role: 'CTO',
-        company: 'High-Growth Digital Platform',
         image: 'https://images.unsplash.com/photo-1737574821698-862e77f044c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYW4lMjBleGVjdXRpdmUlMjBwb3J0cmFpdHxlbnwxfHx8fDE3NjUzNzQ0Njh8MA&ixlib=rb-4.1.0&q=80&w=1080',
         quote: 'Predictive quality assurance that delivers real results. The cognitive testing capabilities have revolutionized how we approach software quality across our entire organization.',
       },
@@ -1395,7 +1386,7 @@ export function HomePage() {
       </section>
 
       {/* Trusted by Industry Leaders - Carousel Section */}
-      <TrustedBySection theme={theme} />
+      {/* <TrustedBySection theme={theme} /> */}
 
       {/* Quick Answers - FAQ Section */}
       <section className="relative py-24" style={{ backgroundColor: 'var(--bg-secondary)' }}>
