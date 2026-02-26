@@ -196,7 +196,7 @@ export function ContactPage() {
                 ))}
               </div>
 
-              {/* Quick Stats */}
+              {/* Quick Stats removed per content update
               <div
                 className="backdrop-blur-sm rounded-2xl p-6"
                 style={{
@@ -219,6 +219,7 @@ export function ContactPage() {
                   ))}
                 </div>
               </div>
+              */}
             </div>
 
             {/* Contact Form */}

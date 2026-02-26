@@ -1,5 +1,5 @@
 import React from 'react';
-import { Target, Users, Award, TrendingUp, Heart, Zap, Globe, Shield, CheckCircle2, Linkedin, Twitter, ArrowRight } from 'lucide-react';
+import { Target, Users, TrendingUp, Heart, Zap, Globe, Shield, ArrowRight } from 'lucide-react';
 import { StatsSection } from '../components/StatsSection';
 import { CTASection } from '../components/CTASection';
 import { PageContainer } from '../components/PageContainer';
@@ -78,18 +78,10 @@ export function AboutPage() {
       title: 'AI Quality Platform Launched',
       description: 'Cogniron unveils its AI Quality Platform, unifying automation, intelligence, and production into a single autonomous quality framework.',
     },
-  ];
-
-  const team = [
     {
-      name: 'Sarah Chen',
-      role: 'CEO & Founder',
-      bio: '20+ years in quality engineering. Former VP at major tech companies.',
-    },
-    {
-      name: 'Michael Rodriguez',
-      role: 'CTO',
-      bio: 'AI/ML expert. PhD in Computer Science. Published researcher in automated testing.',
+      year: '2026',
+      title: 'Enterprise Expansion & Innovation',
+      description: 'Cogniron expands its enterprise footprint and continues pushing the boundaries of AI-driven quality engineering with advanced cognitive capabilities.',
     },
   ];
 
@@ -343,84 +335,79 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="relative py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="text-center mb-16">
-            <div className="mb-4">
-              <SectionTag text="Leading at the front" icon={Users} />
-            </div>
-            <h2 className="text-4xl md:text-5xl mb-6" style={{ color: 'var(--text-primary)' }}>Our <span className="gradient-text">Leadership Team</span></h2>
-            <p className="text-xl max-w-3xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
-              Veterans Who Are Driving the Future of Quality Engineering
-            </p>
+      {/* Meet Our Team - CTA Section */}
+      <section className="relative py-24" style={{ backgroundColor: theme === 'dark' ? 'var(--bg-primary)' : '#FFFFFF', paddingBottom: '8rem' }}>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+          <div className="mb-6">
+            <SectionTag text="Our People" icon={Users} />
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {team.map((member, index) => (
-              <div
-                key={index}
-                className="backdrop-blur-sm rounded-xl p-6 text-center transition-all duration-300"
-                style={{
-                  backgroundColor: 'var(--bg-card)',
-                  border: '1px solid var(--border-color)',
-                  boxShadow: 'var(--shadow-sm)',
-                }}
-              >
-                <div
-                  className="w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4"
-                  style={{
-                    background: 'linear-gradient(135deg, #3B82F6 0%, #22D3EE 100%)',
-                  }}
-                >
-                  <Users className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-xl mb-1" style={{ color: 'var(--text-primary)' }}>{member.name}</h3>
-                <p className="mb-3" style={{ color: 'var(--accent-primary)' }}>{member.role}</p>
-                <p className="text-sm mb-4" style={{ color: 'var(--text-secondary)' }}>{member.bio}</p>
-                
-                {/* Social Icons */}
-                <div className="flex items-center justify-center gap-3 pt-4 border-t" style={{ borderColor: 'var(--border-color)' }}>
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View ${member.name} on LinkedIn`}
-                    className="social-icon-link p-2 rounded-lg transition-all duration-200 hover:scale-105"
-                    style={{
-                      color: 'var(--accent-primary)',
-                    }}
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View ${member.name} on Twitter`}
-                    className="social-icon-link p-2 rounded-lg transition-all duration-200 hover:scale-105"
-                    style={{
-                      color: 'var(--accent-primary)',
-                    }}
-                  >
-                    <Twitter className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
-            ))}
+          <h2 className="text-4xl md:text-5xl mb-6" style={{ color: 'var(--text-primary)' }}>Meet Our <span className="gradient-text">Expert Team</span></h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+            We're a team of quality engineering veterans, AI researchers, and domain specialists dedicated to transforming how enterprises approach software quality.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/careers"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105"
+              style={{
+                background: 'linear-gradient(135deg, #2563EB 0%, #06B6D4 100%)',
+                color: '#FFFFFF',
+                boxShadow: 'var(--shadow-accent)',
+              }}
+            >
+              Join Our Team →
+            </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl transition-all duration-300"
+              style={{
+                backgroundColor: theme === 'dark' ? 'rgba(255, 255, 255, 0.05)' : '#FFFFFF',
+                border: `2px solid ${theme === 'dark' ? 'var(--border-color)' : 'rgba(37, 99, 235, 0.25)'}`,
+                color: theme === 'dark' ? 'var(--text-primary)' : '#2563EB',
+                boxShadow: theme === 'dark' ? 'var(--shadow-sm)' : '0 4px 12px rgba(37, 99, 235, 0.12)',
+              }}
+            >
+              Get In Touch
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <CTASection
-        title="Join Our Journey"
-        description="Ready to elevate your software quality with cognitive intelligence? Let's build the future of digital excellence together."
-        primaryButtonText="Explore Careers"
-        primaryButtonLink="/careers"
-        secondaryButtonText="Contact Us"
-        secondaryButtonLink="/contact"
-      />
+      {/* Join Our Journey - CTA Section */}
+      <section className="relative py-32" style={{ backgroundColor: theme === 'dark' ? 'var(--bg-secondary)' : 'linear-gradient(180deg, #F7FBFF 0%, #FFFFFF 50%, #E8F4FF 100%)', marginTop: '4rem' }}>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+          <h2 className="text-4xl md:text-5xl mb-6" style={{ color: 'var(--text-primary)' }}>Join Our <span className="gradient-text">Journey</span></h2>
+          <p className="text-xl mb-12 max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+            Ready to elevate your software quality with cognitive intelligence? Let's build the future of digital excellence together.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/careers"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105"
+              style={{
+                background: 'linear-gradient(135deg, #2563EB 0%, #06B6D4 100%)',
+                color: '#FFFFFF',
+                boxShadow: 'var(--shadow-accent)',
+              }}
+            >
+              Explore Careers
+            </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl transition-all duration-300"
+              style={{
+                backgroundColor: theme === 'dark' ? 'rgba(255, 255, 255, 0.05)' : '#FFFFFF',
+                border: `2px solid ${theme === 'dark' ? 'var(--border-color)' : 'rgba(37, 99, 235, 0.25)'}`,
+                color: theme === 'dark' ? 'var(--text-primary)' : '#2563EB',
+                boxShadow: theme === 'dark' ? 'var(--shadow-sm)' : '0 4px 12px rgba(37, 99, 235, 0.12)',
+              }}
+            >
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </section>
     </PageContainer>
   );
 }
