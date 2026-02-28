@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Play, 
   Brain, 
   Zap, 
   Shield, 
@@ -33,7 +32,6 @@ import { useGradientShimmer } from '../hooks/useGradientShimmer';
 export function PlatformPage() {
   const { theme } = useTheme();
   useGradientShimmer();
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [activeModule, setActiveModule] = useState(0);
 
   const aiCapabilities = [
@@ -313,61 +311,6 @@ export function PlatformPage() {
                 Try Gretah AI now
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <button
-                onClick={() => setIsVideoPlaying(true)}
-                className="px-8 py-4 rounded-lg border transition-all duration-300 flex items-center gap-2"
-                style={{
-                  backgroundColor: theme === 'dark' ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  color: 'var(--text-primary)',
-                  borderColor: 'var(--border-color)',
-                }}
-              >
-                <Play className="w-5 h-5" />
-                Watch Demo
-              </button>
-            </div>
-
-            {/* Platform Preview */}
-            <div className="relative max-w-5xl mx-auto">
-              <div 
-                className="absolute inset-0 rounded-3xl blur-3xl"
-                style={{
-                  background: theme === 'dark' 
-                    ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2))'
-                    : 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1))',
-                }}
-              ></div>
-              <div 
-                className="relative rounded-2xl border overflow-hidden backdrop-blur-xl"
-                style={{
-                  backgroundColor: 'var(--bg-card)',
-                  borderColor: 'var(--border-color)',
-                  boxShadow: theme === 'dark' 
-                    ? '0 20px 40px rgba(59, 130, 246, 0.2)'
-                    : 'var(--shadow-xl)',
-                }}
-              >
-                {!isVideoPlaying ? (
-                  <div className="aspect-video flex flex-col items-center justify-center p-12">
-                    <button
-                      onClick={() => setIsVideoPlaying(true)}
-                      className="w-24 h-24 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-lg mb-6"
-                      style={{
-                        background: 'linear-gradient(135deg, #2563EB, #06B6D4)',
-                        boxShadow: '0 10px 30px rgba(59, 130, 246, 0.5)',
-                      }}
-                    >
-                      <Play className="w-10 h-10 text-white ml-1" />
-                    </button>
-                    <h3 className="text-2xl mb-2" style={{ color: 'var(--text-primary)' }}>See Gretah AI in Action</h3>
-                    <p style={{ color: 'var(--text-secondary)' }}>3-minute platform overview</p>
-                  </div>
-                ) : (
-                  <div className="aspect-video flex items-center justify-center" style={{ backgroundColor: 'var(--bg-elevated)' }}>
-                    <p style={{ color: 'var(--text-secondary)' }}>Video Player Placeholder</p>
-                  </div>
-                )}
-              </div>
             </div>
           </div>
         </div>
