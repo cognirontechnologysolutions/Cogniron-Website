@@ -162,7 +162,7 @@ export function ContactPage() {
               <div className="space-y-6 mb-12">
                 {[
                   { icon: Mail, label: 'Email', value: 'info@cogniron.com', href: 'mailto:info@cogniron.com' },
-                  { icon: MapPin, label: 'Headquarters', value: '8787 N MacArthur BLVD STE 120-A\nIrving, TX 75063' },
+                  { icon: MapPin, label: 'India Office', value: '1502B, Manjeera Trinity Corporate\nHyderabad, TG 500072\n\nUS Office:\n8787 N MacArthur BLVD STE 120-A\nIrving, TX 75063' },
                   { icon: Clock, label: 'Business Hours', value: 'Monday - Friday: 10am - 7pm IST\n24/7 Support for Enterprise Clients' },
                 ].map((item, index) => (
                   <div key={index} className="flex items-start space-x-4">
@@ -518,15 +518,15 @@ export function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
-                title: 'US Address',
-                phone: '+1-945-268-5213',
-                address: '8787 N MacArthur BLVD\nSTE 120-A, Irving, TX 75063',
-                email: 'info@cogniron.com',
-              },
-              {
                 title: 'India Address',
                 phone: '+91 7680039529',
                 address: '1502B, Manjeera Trinity Corporate\nHyderabad, TG 500072',
+                email: 'info@cogniron.com',
+              },
+              {
+                title: 'US Address',
+                phone: '+1-945-268-5213',
+                address: '8787 N MacArthur BLVD\nSTE 120-A, Irving, TX 75063',
                 email: 'info@cogniron.com',
               },
             ].map((office, index) => (
