@@ -137,6 +137,31 @@ export function Navigation() {
               Gretah AI
             </Link>
 
+            <Link
+              to="/cognituring"
+              className="px-3 py-2 rounded-lg transition-all duration-200"
+              style={{
+                color: location.pathname === '/cognituring' ? '#7C3AED' : 'var(--text-secondary)',
+                backgroundColor: location.pathname === '/cognituring'
+                  ? theme === 'dark' ? 'rgba(124, 58, 237, 0.15)' : 'rgba(124, 58, 237, 0.08)'
+                  : 'transparent',
+              }}
+              onMouseEnter={(e) => {
+                if (location.pathname !== '/cognituring') {
+                  e.currentTarget.style.color = '#7C3AED';
+                  e.currentTarget.style.fontWeight = '600';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (location.pathname !== '/cognituring') {
+                  e.currentTarget.style.color = 'var(--text-secondary)';
+                  e.currentTarget.style.fontWeight = 'normal';
+                }
+              }}
+            >
+              Cognituring
+            </Link>
+
             {/* Services Dropdown */}
             <div
               className="relative overflow-visible"
@@ -472,6 +497,15 @@ export function Navigation() {
               style={{ color: 'var(--text-secondary)' }}
             >
               Gretah AI
+            </Link>
+
+            <Link
+              to="/cognituring"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block px-4 py-3 rounded-lg transition-colors"
+              style={{ color: 'var(--text-secondary)' }}
+            >
+              Cognituring
             </Link>
             
             <div className="px-4 py-2 text-sm uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>
