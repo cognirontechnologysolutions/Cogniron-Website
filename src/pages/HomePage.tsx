@@ -9,7 +9,6 @@ import { SectionTag } from '../components/SectionTag';
 import { Tag } from '../components/Tag';
 import { useTheme } from '../contexts/ThemeContext';
 import { useGradientShimmer } from '../hooks/useGradientShimmer';
-import Slider from 'react-slick';
 
 export function HomePage() {
   const { theme } = useTheme();

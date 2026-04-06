@@ -44,6 +44,7 @@ const BlogPage = lazy(() => import("./pages/BlogPage").then(module => ({ default
 const AboutPage = lazy(() => import("./pages/AboutPage").then(module => ({ default: module.AboutPage })));
 const CaseStudiesPage = lazy(() => import("./pages/CaseStudiesPage").then(module => ({ default: module.CaseStudiesPage })));
 const PlatformPage = lazy(() => import("./pages/PlatformPage").then(module => ({ default: module.PlatformPage })));
+const CogniTuringPage = lazy(() => import("./pages/CogniTuringPage").then(module => ({ default: module.CogniTuringPage })));
 const CareersPage = lazy(() => import("./pages/CareersPage").then(module => ({ default: module.CareersPage })));
 const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage").then(module => ({ default: module.PrivacyPolicyPage })));
 const TermsOfServicePage = lazy(() => import("./pages/TermsOfServicePage").then(module => ({ default: module.TermsOfServicePage })));
@@ -158,6 +159,10 @@ export default function App() {
                 <Route
                   path="/GretahAI"
                   element={<PlatformPage />}
+                />
+                <Route
+                  path="/cognituring"
+                  element={<CogniTuringPage />}
                 />
                 <Route
                   path="/services"
