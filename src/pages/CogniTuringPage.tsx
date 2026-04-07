@@ -519,33 +519,32 @@ export function CogniTuringPage() {
 
             {/* Left box — The AI Quality Gap */}
             <div
-              className="rounded-3xl p-12 flex flex-col gap-8"
+              className="rounded-3xl p-8 flex flex-col gap-5"
               style={{
-                backgroundColor: 'rgba(255,255,255,0.03)',
-                border: '1px solid rgba(147,197,253,0.12)',
+                backgroundColor: 'rgba(99,60,180,0.18)',
+                border: '1px solid rgba(167,139,250,0.28)',
+                backdropFilter: 'blur(8px)',
               }}
             >
-              {/* SectionTag in self-start wrapper to prevent full-width stretch */}
               <div className="self-start">
                 <SectionTag text="The AI Quality Gap" icon={AlertTriangle} />
               </div>
 
               <div>
-                <h2 className="text-2xl lg:text-3xl font-bold text-white mb-5" style={{ lineHeight: '1.3' }}>
-                  Most Teams Ship AI the Same Way.
-                  <span className="block mt-2" style={{ color: '#7DD3FC' }}>
+                <h2 className="text-xl lg:text-2xl font-bold text-white mb-3" style={{ lineHeight: '1.3' }}>
+                  Most Teams Ship AI Without a Real QA Process.
+                  <span className="block mt-1" style={{ color: '#7DD3FC' }}>
                     And Find Out What They Missed After the Fact.
                   </span>
                 </h2>
-                <p className="text-[15px] leading-7" style={{ color: 'rgba(148,163,184,1)' }}>
-                  Traditional QA was built for deterministic software. AI is not deterministic.
-                  Your bot can pass every manual test on a Tuesday — and hallucinate on Wednesday.
-                  Standard QA tools don't catch this. Spreadsheets don't scale. This is the gap{' '}
-                  {hl('CogniTuring was built to close.', true)}
+                <p className="text-[14px] leading-6" style={{ color: 'rgba(148,163,184,1)' }}>
+                  Traditional QA was built for deterministic software. AI is not.
+                  Your bot can pass every manual test on Tuesday — and hallucinate on Wednesday.
+                  {' '}{hl('CogniTuring was built to close that gap.', true)}
                 </p>
               </div>
 
-              <div className="flex flex-col gap-4 flex-1">
+              <div className="flex flex-col gap-3 flex-1">
                 {[
                   { quote: '"Most AI teams have no formal evaluation process beyond manual review."', source: 'Enterprise AI Governance Survey, 2024' },
                   { quote: '"Hallucination, bias, and prompt injection are the top three AI failure modes enterprises are unprepared for."', source: 'AI Risk Report, Gartner' },
@@ -553,14 +552,14 @@ export function CogniTuringPage() {
                 ].map((card, i) => (
                   <div
                     key={i}
-                    className="rounded-2xl p-6 flex-1"
+                    className="rounded-xl p-4"
                     style={{
                       backgroundColor: 'rgba(30,58,138,0.25)',
                       border: '1px solid rgba(59,130,246,0.2)',
                     }}
                   >
-                    <p className="text-[15px] italic leading-7 mb-3" style={{ color: 'rgba(226,232,240,0.85)' }}>{card.quote}</p>
-                    <p className="text-sm font-medium tracking-wide" style={{ color: '#7DD3FC' }}>— {card.source}</p>
+                    <p className="text-[13px] italic leading-6 mb-1.5" style={{ color: 'rgba(226,232,240,0.85)' }}>{card.quote}</p>
+                    <p className="text-xs font-medium tracking-wide" style={{ color: '#7DD3FC' }}>— {card.source}</p>
                   </div>
                 ))}
               </div>
@@ -568,45 +567,31 @@ export function CogniTuringPage() {
 
             {/* Right box — What CogniTuring Is */}
             <div
-              className="rounded-3xl p-12 flex flex-col gap-0"
+              className="rounded-3xl p-8 flex flex-col gap-0"
               style={{
-                backgroundColor: 'rgba(30,58,138,0.15)',
-                border: '1px solid rgba(59,130,246,0.18)',
+                backgroundColor: '#EFF6FF',
+                border: '1px solid #BFDBFE',
               }}
             >
-              {/* SectionTag in self-start wrapper */}
-              <div className="self-start mb-8">
+              <div className="self-start mb-5">
                 <SectionTag text="What CogniTuring Is" icon={Shield} />
               </div>
 
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8" style={{ lineHeight: '1.2' }}>
+              <h2 className="text-xl lg:text-2xl font-bold mb-4" style={{ color: '#1E3A8A', lineHeight: '1.3' }}>
                 QA for AI Systems.{' '}
-                <span
-                  style={{
-                    background: 'linear-gradient(135deg, #60A5FA 0%, #22D3EE 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                >
-                  Finally Built the Right Way.
-                </span>
+                <span style={{ color: '#2563EB' }}>Finally Built the Right Way.</span>
               </h2>
 
               {/* Quick-stat chips */}
-              <div className="flex flex-wrap gap-2 mb-8">
-                {[
-                  '5 Evaluation Pillars',
-                  '80+ Adversarial Patterns',
-                  'One-Click Compliance Evidence',
-                ].map((stat, i) => (
+              <div className="flex flex-wrap gap-2 mb-5">
+                {['5 Evaluation Pillars', '80+ Adversarial Patterns', 'One-Click Compliance Evidence'].map((stat, i) => (
                   <span
                     key={i}
-                    className="text-sm font-medium px-4 py-1.5 rounded-full whitespace-nowrap"
+                    className="text-xs font-medium px-3 py-1 rounded-full whitespace-nowrap"
                     style={{
-                      backgroundColor: 'rgba(37,99,235,0.18)',
-                      color: '#BAE6FD',
-                      border: '1px solid rgba(59,130,246,0.3)',
+                      backgroundColor: 'rgba(37,99,235,0.1)',
+                      color: '#1E40AF',
+                      border: '1px solid rgba(37,99,235,0.25)',
                     }}
                   >
                     {stat}
@@ -614,18 +599,12 @@ export function CogniTuringPage() {
                 ))}
               </div>
 
-              <p className="text-[17px] leading-8 mb-5" style={{ color: 'rgba(148,163,184,1)' }}>
-                {hl('CogniTuring is an enterprise platform and expert service model for testing, validating, and governing AI systems — from chatbots and copilots to multi-step agentic workflows.', true)}
-              </p>
-              <p className="text-[17px] leading-8 mb-5" style={{ color: 'rgba(148,163,184,1)' }}>
-                It brings the same discipline that modern DevOps brought to software delivery — structured testing, measurable coverage, automated regression, and audit-ready evidence — to AI systems that are probabilistic, multi-turn, and constantly changing underneath you.
-              </p>
-              <p className="text-[17px] leading-8 mb-10" style={{ color: 'rgba(148,163,184,1)' }}>
-                {hl("Whether your team wants to run AI quality workflows in-house or work with CogniTuring's domain experts to define evaluation strategy, curate datasets, and validate ground truths — the platform is built for both.", true)}
+              <p className="text-[14px] leading-7 mb-5" style={{ color: '#374151' }}>
+                {hl('CogniTuring is an enterprise platform and expert service for testing, validating, and governing AI systems — from chatbots and copilots to multi-step agentic workflows.')} It brings the discipline of modern DevOps — structured testing, measurable coverage, audit-ready evidence — to probabilistic AI systems that change constantly underneath you.
               </p>
 
               {/* Key differentiators grid */}
-              <div className="grid grid-cols-2 gap-3 mb-10">
+              <div className="grid grid-cols-2 gap-2 mb-6">
                 {[
                   { icon: <CheckCircle2 className="w-4 h-4 flex-shrink-0" />, text: 'Works with any AI stack or provider' },
                   { icon: <CheckCircle2 className="w-4 h-4 flex-shrink-0" />, text: 'First evaluation run in 30 minutes' },
@@ -634,27 +613,24 @@ export function CogniTuringPage() {
                   { icon: <CheckCircle2 className="w-4 h-4 flex-shrink-0" />, text: 'CI/CD & release gate integration' },
                   { icon: <CheckCircle2 className="w-4 h-4 flex-shrink-0" />, text: 'Audit-ready evidence in one click' },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-2.5">
-                    <span style={{ color: '#22D3EE', marginTop: '2px' }}>{item.icon}</span>
-                    <span className="text-[14px] leading-6" style={{ color: 'rgba(148,163,184,1)' }}>{item.text}</span>
+                  <div key={i} className="flex items-start gap-2">
+                    <span style={{ color: '#2563EB', marginTop: '2px' }}>{item.icon}</span>
+                    <span className="text-[13px] leading-5" style={{ color: '#4B5563' }}>{item.text}</span>
                   </div>
                 ))}
               </div>
 
-              {/* Tagline with accent bar — pushed to bottom */}
+              {/* Tagline with accent bar */}
               <div
-                className="flex items-start gap-4 pt-8 mt-auto"
-                style={{ borderTop: '1px solid rgba(147,197,253,0.1)' }}
+                className="flex items-start gap-3 pt-5 mt-auto"
+                style={{ borderTop: '1px solid #BFDBFE' }}
               >
                 <div
-                  className="w-1 rounded-full flex-shrink-0 mt-1"
-                  style={{
-                    height: '2.75rem',
-                    background: 'linear-gradient(180deg, #60A5FA 0%, #22D3EE 100%)',
-                  }}
+                  className="w-1 rounded-full flex-shrink-0 mt-0.5"
+                  style={{ height: '2.25rem', background: 'linear-gradient(180deg, #2563EB 0%, #0891B2 100%)' }}
                 />
-                <p className="text-base font-medium leading-relaxed" style={{ color: '#7DD3FC' }}>
-                  One platform. Five evaluation pillars. From first prompt test to continuous production monitoring.
+                <p className="text-sm font-medium leading-relaxed" style={{ color: '#1E40AF' }}>
+                  One platform. Five pillars. From first test to continuous production monitoring.
                 </p>
               </div>
             </div>
