@@ -53,7 +53,7 @@ export function ServicePageHero({ title, subtitle, description, icon: Icon, grad
         </div>
 
         {/* Title */}
-        <h1 className="text-6xl md:text-7xl lg:text-8xl mb-4 tracking-tight" style={{ fontWeight: 600 }}>
+        <h1 className="text-6xl md:text-7xl lg:text-8xl mb-4 tracking-tight" style={{ fontWeight: 600, lineHeight: '1.2' }}>
           {title === 'CRM' ? (
             <span
               className="gradient-text"

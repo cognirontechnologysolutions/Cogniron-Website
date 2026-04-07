@@ -784,7 +784,8 @@ export function HomePage() {
           <h1 
             className="text-5xl md:text-7xl lg:text-8xl mb-6 tracking-tight" 
             style={{ 
-              color: theme === 'dark' ? 'var(--text-primary)' : '#0F172A'
+              color: theme === 'dark' ? 'var(--text-primary)' : '#0F172A',
+              lineHeight: '1.2',
             }}
           >
             Modern QE Enabling You
