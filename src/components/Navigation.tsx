@@ -159,7 +159,7 @@ export function Navigation() {
                 }
               }}
             >
-              Cognituring
+              CogniTuring
             </Link>
 
             {/* Services Dropdown */}
@@ -505,7 +505,7 @@ export function Navigation() {
               className="block px-4 py-3 rounded-lg transition-colors"
               style={{ color: 'var(--text-secondary)' }}
             >
-              Cognituring
+              CogniTuring
             </Link>
             
             <div className="px-4 py-2 text-sm uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>

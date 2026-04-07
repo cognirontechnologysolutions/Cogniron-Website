@@ -47,7 +47,7 @@ export function CogniTuringPage() {
       tab: 'Foundational QA',
       icon: <CheckCircle2 className="w-5 h-5" />,
       headline: 'Does Your AI Actually Answer Correctly?',
-      body: 'The first question any AI team needs to answer: is my model producing accurate, safe, fair, and coherent responses? Cognituring gives you a structured evaluation engine to find out — before your users do.',
+      body: 'The first question any AI team needs to answer: is my model producing accurate, safe, fair, and coherent responses? CogniTuring gives you a structured evaluation engine to find out — before your users do.',
       items: [
         'Accuracy & faithfulness',
         'Hallucination detection',
@@ -67,7 +67,7 @@ export function CogniTuringPage() {
       tab: 'Functional QA for Agents',
       icon: <Workflow className="w-5 h-5" />,
       headline: 'Your Agent Said It Would Do Something. Did It?',
-      body: "When AI systems don't just respond — they act — standard text evaluation misses everything that matters. Cognituring intercepts function calls, validates tool sequences, models state transitions, and verifies that your agent does exactly what it's supposed to do.",
+      body: "When AI systems don't just respond — they act — standard text evaluation misses everything that matters. CogniTuring intercepts function calls, validates tool sequences, models state transitions, and verifies that your agent does exactly what it's supposed to do.",
       items: [
         'Function call argument validation',
         'Expected vs. actual call sequence analysis',
@@ -84,7 +84,7 @@ export function CogniTuringPage() {
       tab: 'Adversarial & Security',
       icon: <ShieldAlert className="w-5 h-5" />,
       headline: 'What Happens When Someone Tries to Break It?',
-      body: 'Every AI system in production is a potential attack surface. Cognituring\'s red-team engine runs 80+ adversarial attack patterns — including every major scenario in the OWASP LLM Top 10 — so you find the exploitable failure modes before a threat actor does.',
+      body: 'Every AI system in production is a potential attack surface. CogniTuring\'s red-team engine runs 80+ adversarial attack patterns — including every major scenario in the OWASP LLM Top 10 — so you find the exploitable failure modes before a threat actor does.',
       items: [
         'Prompt injection',
         'Jailbreak resistance',
@@ -102,7 +102,7 @@ export function CogniTuringPage() {
       tab: 'Compliance & Governance',
       icon: <ClipboardCheck className="w-5 h-5" />,
       headline: 'Engineering Tested It. Now Prove It to Everyone Else.',
-      body: 'Your risk team, audit team, legal team, and procurement partners don\'t speak engineering. Cognituring automatically translates test results into governance-ready evidence — mapped to the frameworks they recognize.',
+      body: 'Your risk team, audit team, legal team, and procurement partners don\'t speak engineering. CogniTuring automatically translates test results into governance-ready evidence — mapped to the frameworks they recognize.',
       items: [
         'ISO/IEC 42001 (AI Management System)',
         'ISO/IEC 23894 (AI Risk Management)',
@@ -120,7 +120,7 @@ export function CogniTuringPage() {
       tab: 'Continuous Monitoring',
       icon: <Activity className="w-5 h-5" />,
       headline: 'Your AI Passed QA Three Months Ago. What About Today?',
-      body: 'Prompt changes. Model updates. Provider migrations. Every change is a regression risk you can\'t afford to discover in production. Cognituring runs continuous regression testing, tracks quality over time, and alerts you the moment something drifts.',
+      body: 'Prompt changes. Model updates. Provider migrations. Every change is a regression risk you can\'t afford to discover in production. CogniTuring runs continuous regression testing, tracks quality over time, and alerts you the moment something drifts.',
       items: [
         'Scheduled regression runs',
         'Canary evaluations before rollout',
@@ -141,7 +141,7 @@ export function CogniTuringPage() {
     { step: 1, title: 'Connect', desc: 'Plug in your model, application, or agent endpoint. Supports hosted models, self-hosted, gateways, and agent frameworks.', icon: <Zap className="w-5 h-5" /> },
     { step: 2, title: 'Define Scope', desc: 'Set your evaluation scope, risk profile, and SME ownership. Decide what "correct" means for your specific use case.', icon: <Target className="w-5 h-5" /> },
     { step: 3, title: 'Build Your Dataset', desc: 'Import existing prompts or build scenarios from scratch. Single-turn, multi-turn, agent workflows, red-team campaigns — all supported.', icon: <FileText className="w-5 h-5" /> },
-    { step: 4, title: 'AI Suggests. Humans Decide.', desc: 'Cognituring proposes test case expansions and expected-output drafts. Your domain experts review and approve. AI accelerates. Humans own the ground truth.', icon: <Eye className="w-5 h-5" /> },
+    { step: 4, title: 'AI Suggests. Humans Decide.', desc: 'CogniTuring proposes test case expansions and expected-output drafts. Your domain experts review and approve. AI accelerates. Humans own the ground truth.', icon: <Eye className="w-5 h-5" /> },
     { step: 5, title: 'Configure Dimensions & Gates', desc: 'Choose which quality, safety, functional, and compliance dimensions apply. Set pass/fail thresholds that match your release standards.', icon: <BarChart3 className="w-5 h-5" /> },
     { step: 6, title: 'Run', desc: 'Execute evaluation runs across prompts, conversations, tool calls, and workflows. Deterministic scoring where possible. AI-judge scoring where semantics matter.', icon: <Cpu className="w-5 h-5" /> },
     { step: 7, title: 'Analyze', desc: 'Review findings by dimension, severity, and business impact. Failures automatically clustered into root-cause patterns — not 38 individual tickets.', icon: <Search className="w-5 h-5" /> },
@@ -194,19 +194,19 @@ export function CogniTuringPage() {
     },
     {
       title: 'Agentic Procurement / Ops Assistant',
-      desc: 'Cognituring validates every call, every sequence, every state transition. If it miscalls a tool, skips a step, or acts beyond its authority — you\'ll know before production.',
+      desc: 'CogniTuring validates every call, every sequence, every state transition. If it miscalls a tool, skips a step, or acts beyond its authority — you\'ll know before production.',
       icon: <Workflow className="w-6 h-6" />,
       tags: ['Tool Calls', 'State Machine', 'Workflows'],
     },
     {
       title: 'Internal Enterprise Copilot',
-      desc: 'As prompts change and backend models update, behavior drifts. Cognituring benchmarks every version, catches regressions, and enforces organization-specific policy thresholds continuously.',
+      desc: 'As prompts change and backend models update, behavior drifts. CogniTuring benchmarks every version, catches regressions, and enforces organization-specific policy thresholds continuously.',
       icon: <Layers className="w-6 h-6" />,
       tags: ['Drift Detection', 'Regression', 'Policy'],
     },
     {
       title: 'AI Vendor Due Diligence',
-      desc: 'Run a third-party AI system through Cognituring\'s evaluation suite before you commit. Compare quality, safety, and compliance readiness across vendors with a common framework.',
+      desc: 'Run a third-party AI system through CogniTuring\'s evaluation suite before you commit. Compare quality, safety, and compliance readiness across vendors with a common framework.',
       icon: <BadgeCheck className="w-6 h-6" />,
       tags: ['Vendor Comparison', 'Due Diligence', 'Evidence'],
     },
@@ -293,24 +293,24 @@ export function CogniTuringPage() {
       a: 'Most teams are running their first evaluation within 30 minutes. You connect your AI endpoint, define your test scope, and run. No re-engineering of your existing system required.',
     },
     {
-      q: 'Does Cognituring work with any AI model or stack?',
+      q: 'Does CogniTuring work with any AI model or stack?',
       a: 'Yes. It connects to all major AI providers, self-hosted models, model gateways, and agent frameworks. It\'s designed to be model-agnostic and stack-agnostic by default.',
     },
     {
       q: 'Is this just another prompt testing tool?',
-      a: 'No. Prompt testing is one component. Cognituring covers foundational QA, adversarial testing, functional validation for agents, compliance evidence, and continuous monitoring — in one platform. It\'s a QA operating model, not a prompt checker.',
+      a: 'No. Prompt testing is one component. CogniTuring covers foundational QA, adversarial testing, functional validation for agents, compliance evidence, and continuous monitoring — in one platform. It\'s a QA operating model, not a prompt checker.',
     },
     {
       q: 'What if we need help defining what "correct" means for our AI use case?',
-      a: 'That\'s exactly what our expert service model is for. Cognituring specialists and domain SMEs work alongside your team to define rubrics, curate datasets, and validate ground truths — particularly in high-stakes or regulated domains.',
+      a: 'That\'s exactly what our expert service model is for. CogniTuring specialists and domain SMEs work alongside your team to define rubrics, curate datasets, and validate ground truths — particularly in high-stakes or regulated domains.',
     },
     {
-      q: 'How does Cognituring handle AI model updates and provider changes?',
+      q: 'How does CogniTuring handle AI model updates and provider changes?',
       a: 'When your backend model changes — through a version update, a provider migration, or a prompt change — you re-run your evaluation suite against the new version and compare results side by side. Release gates catch regressions before they reach production.',
     },
     {
       q: 'Can we generate compliance documentation directly?',
-      a: 'Yes. Cognituring automatically produces standards-mapped scorecards, audit-ready evidence packs, executive summaries, and control pass/fail narratives — exportable in one click.',
+      a: 'Yes. CogniTuring automatically produces standards-mapped scorecards, audit-ready evidence packs, executive summaries, and control pass/fail narratives — exportable in one click.',
     },
   ];
 
@@ -387,6 +387,7 @@ export function CogniTuringPage() {
     border: '1px solid var(--border-color)',
     boxShadow: theme === 'dark' ? 'var(--shadow-sm)' : '0 2px 8px rgba(0,55,106,0.04)',
     transition: 'all 300ms',
+    transform: 'translateY(0)',
   };
   const cardHover = {
     boxShadow: theme === 'dark'
@@ -394,6 +395,14 @@ export function CogniTuringPage() {
       : '0 12px 32px rgba(0,84,166,0.12)',
     transform: 'translateY(-4px)',
   };
+
+  // ── Brand name highlighter ────────────────────────────────────────────────
+  const hl = (text: string, dark = false) =>
+    text.split('CogniTuring').flatMap((part, i, arr) =>
+      i < arr.length - 1
+        ? [part, <strong key={i} style={{ color: dark ? '#93C5FD' : '#2563EB', fontWeight: 700 }}>CogniTuring</strong>]
+        : [part]
+    );
 
   return (
     <PageContainer>
@@ -429,11 +438,11 @@ export function CogniTuringPage() {
           <div className="text-center mb-12">
             <div className="mb-8">
               <Tag icon={Shield} size="lg" variant="default">
-                Cognituring · Enterprise AI QA Platform
+                CogniTuring · Enterprise AI QA Platform
               </Tag>
             </div>
 
-            <h1 className="text-5xl lg:text-7xl mb-6 max-w-4xl mx-auto" style={{ color: 'var(--text-primary)', lineHeight: '1.08', fontWeight: 700 }}>
+            <h1 className="text-5xl lg:text-7xl mb-6 max-w-4xl mx-auto" style={{ color: 'var(--text-primary)', lineHeight: '1.2', fontWeight: 700 }}>
               Your AI Is Live.
               <br />
               <span
@@ -449,7 +458,7 @@ export function CogniTuringPage() {
             </h1>
 
             <p className="text-xl lg:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              <strong style={{ color: 'var(--text-primary)' }}>Cognituring</strong> is the enterprise QA platform for AI systems, copilots, and agents.
+              <strong style={{ color: '#2563EB', fontWeight: 800 }}>CogniTuring</strong> is the enterprise QA platform for AI systems, copilots, and agents.
               Test what your AI says. Verify what it does. Prove it's ready — before it costs you.
             </p>
 
@@ -500,97 +509,133 @@ export function CogniTuringPage() {
         </div>
       </section>
 
-      {/* ── PROBLEM STATEMENT ────────────────────────────────────────────── */}
+      {/* ── PROBLEM + PRODUCT INTRO ──────────────────────────────────────── */}
       <section
         className="py-24 relative"
-        style={{
-          backgroundColor: '#0F172A',
-          color: '#fff',
-        }}
+        style={{ backgroundColor: '#0F172A', color: '#fff' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="text-center mb-16">
-            <div className="mb-4">
-              <SectionTag text="The AI Quality Gap" icon={AlertTriangle} />
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 max-w-3xl mx-auto">
-              Most Teams Ship AI the Same Way.
-              <span className="block mt-2" style={{ color: '#93C5FD' }}>And Find Out What They Missed After the Fact.</span>
-            </h2>
-            <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              Traditional QA was built for deterministic software. AI is not deterministic.
-              Your bot can pass every manual test on a Tuesday — and hallucinate on Wednesday.
-              Standard QA tools don't catch this. Spreadsheets don't scale. This is the gap Cognituring was built to close.
-            </p>
-          </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                quote: '"Most AI teams have no formal evaluation process beyond manual review."',
-                source: 'Enterprise AI Governance Survey, 2024',
-              },
-              {
-                quote: '"Hallucination, bias, and prompt injection are the top three AI failure modes enterprises are unprepared for."',
-                source: 'AI Risk Report, Gartner',
-              },
-              {
-                quote: '"Compliance teams report receiving insufficient evidence of AI system readiness from engineering."',
-                source: 'Internal Audit AI Readiness Index',
-              },
-            ].map((card, i) => (
-              <div
-                key={i}
-                className="rounded-2xl p-7"
-                style={{
-                  backgroundColor: 'rgba(37,99,235,0.10)',
-                  border: '1px solid rgba(37,99,235,0.25)',
-                }}
-              >
-                <p className="text-slate-200 text-base italic leading-relaxed mb-4">{card.quote}</p>
-                <p className="text-sm" style={{ color: '#93C5FD' }}>— {card.source}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── PRODUCT INTRO ────────────────────────────────────────────────── */}
-      <section
-        className="py-24 relative"
-        style={{ backgroundColor: theme === 'dark' ? 'var(--bg-primary)' : 'var(--bg-secondary)' }}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-          <div className="mb-4">
-            <SectionTag text="What Cognituring Is" icon={Shield} />
-          </div>
-          <h2 className="text-4xl lg:text-5xl mb-8" style={{ color: 'var(--text-primary)', fontWeight: 700 }}>
-            QA for AI Systems.{' '}
-            <span
+            {/* Left box — The AI Quality Gap */}
+            <div
+              className="rounded-3xl p-8 flex flex-col gap-5"
               style={{
-                background: 'linear-gradient(135deg, #2563EB 0%, #06B6D4 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
+                backgroundColor: 'rgba(99,60,180,0.18)',
+                border: '1px solid rgba(167,139,250,0.28)',
+                backdropFilter: 'blur(8px)',
               }}
             >
-              Finally Built the Right Way.
-            </span>
-          </h2>
-          <div className="space-y-5 text-left">
-            {[
-              'Cognituring is an enterprise platform and expert service model for testing, validating, and governing AI systems — from chatbots and copilots to multi-step agentic workflows.',
-              'It brings the same discipline that modern DevOps brought to software delivery — structured testing, measurable coverage, automated regression, and audit-ready evidence — to AI systems that are probabilistic, multi-turn, and constantly changing underneath you.',
-              'Whether your team wants to run AI quality workflows in-house or work with Cognituring\'s domain experts to define evaluation strategy, curate datasets, and validate ground truths — the platform is built for both.',
-            ].map((para, i) => (
-              <p key={i} className="text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                {para}
+              <div className="self-start">
+                <SectionTag text="The AI Quality Gap" icon={AlertTriangle} />
+              </div>
+
+              <div>
+                <h2 className="text-xl lg:text-2xl font-bold text-white mb-3" style={{ lineHeight: '1.3' }}>
+                  Most Teams Ship AI Without a Real QA Process.
+                  <span className="block mt-1" style={{ color: '#7DD3FC' }}>
+                    And Find Out What They Missed After the Fact.
+                  </span>
+                </h2>
+                <p className="text-[14px] leading-6" style={{ color: 'rgba(148,163,184,1)' }}>
+                  Traditional QA was built for deterministic software. AI is not.
+                  Your bot can pass every manual test on Tuesday — and hallucinate on Wednesday.
+                  {' '}{hl('CogniTuring was built to close that gap.', true)}
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-3 flex-1">
+                {[
+                  { quote: '"Most AI teams have no formal evaluation process beyond manual review."', source: 'Enterprise AI Governance Survey, 2024' },
+                  { quote: '"Hallucination, bias, and prompt injection are the top three AI failure modes enterprises are unprepared for."', source: 'AI Risk Report, Gartner' },
+                  { quote: '"Compliance teams report receiving insufficient evidence of AI system readiness from engineering."', source: 'Internal Audit AI Readiness Index' },
+                ].map((card, i) => (
+                  <div
+                    key={i}
+                    className="rounded-xl p-4"
+                    style={{
+                      backgroundColor: 'rgba(30,58,138,0.25)',
+                      border: '1px solid rgba(59,130,246,0.2)',
+                    }}
+                  >
+                    <p className="text-[13px] italic leading-6 mb-1.5" style={{ color: 'rgba(226,232,240,0.85)' }}>{card.quote}</p>
+                    <p className="text-xs font-medium tracking-wide" style={{ color: '#7DD3FC' }}>— {card.source}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right box — What CogniTuring Is */}
+            <div
+              className="rounded-3xl p-8 flex flex-col gap-0"
+              style={{
+                backgroundColor: '#EFF6FF',
+                border: '1px solid #BFDBFE',
+              }}
+            >
+              <div className="self-start mb-5">
+                <SectionTag text="What CogniTuring Is" icon={Shield} />
+              </div>
+
+              <h2 className="text-xl lg:text-2xl font-bold mb-4" style={{ color: '#1E3A8A', lineHeight: '1.3' }}>
+                QA for AI Systems.{' '}
+                <span style={{ color: '#2563EB' }}>Finally Built the Right Way.</span>
+              </h2>
+
+              {/* Quick-stat chips */}
+              <div className="flex flex-wrap gap-2 mb-5">
+                {['5 Evaluation Pillars', '80+ Adversarial Patterns', 'One-Click Compliance Evidence'].map((stat, i) => (
+                  <span
+                    key={i}
+                    className="text-xs font-medium px-3 py-1 rounded-full whitespace-nowrap"
+                    style={{
+                      backgroundColor: 'rgba(37,99,235,0.1)',
+                      color: '#1E40AF',
+                      border: '1px solid rgba(37,99,235,0.25)',
+                    }}
+                  >
+                    {stat}
+                  </span>
+                ))}
+              </div>
+
+              <p className="text-[14px] leading-7 mb-5" style={{ color: '#374151' }}>
+                {hl('CogniTuring is an enterprise platform and expert service for testing, validating, and governing AI systems — from chatbots and copilots to multi-step agentic workflows.')} It brings the discipline of modern DevOps — structured testing, measurable coverage, audit-ready evidence — to probabilistic AI systems that change constantly underneath you.
               </p>
-            ))}
+
+              {/* Key differentiators grid */}
+              <div className="grid grid-cols-2 gap-2 mb-6">
+                {[
+                  { icon: <CheckCircle2 className="w-4 h-4 flex-shrink-0" />, text: 'Works with any AI stack or provider' },
+                  { icon: <CheckCircle2 className="w-4 h-4 flex-shrink-0" />, text: 'First evaluation run in 30 minutes' },
+                  { icon: <CheckCircle2 className="w-4 h-4 flex-shrink-0" />, text: 'Single-turn to agentic workflows' },
+                  { icon: <CheckCircle2 className="w-4 h-4 flex-shrink-0" />, text: 'Expert service layer available' },
+                  { icon: <CheckCircle2 className="w-4 h-4 flex-shrink-0" />, text: 'CI/CD & release gate integration' },
+                  { icon: <CheckCircle2 className="w-4 h-4 flex-shrink-0" />, text: 'Audit-ready evidence in one click' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <span style={{ color: '#2563EB', marginTop: '2px' }}>{item.icon}</span>
+                    <span className="text-[13px] leading-5" style={{ color: '#4B5563' }}>{item.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Tagline with accent bar */}
+              <div
+                className="flex items-start gap-3 pt-5 mt-auto"
+                style={{ borderTop: '1px solid #BFDBFE' }}
+              >
+                <div
+                  className="w-1 rounded-full flex-shrink-0 mt-0.5"
+                  style={{ height: '2.25rem', background: 'linear-gradient(180deg, #2563EB 0%, #0891B2 100%)' }}
+                />
+                <p className="text-sm font-medium leading-relaxed" style={{ color: '#1E40AF' }}>
+                  One platform. Five pillars. From first test to continuous production monitoring.
+                </p>
+              </div>
+            </div>
+
           </div>
-          <p className="text-center mt-10 text-sm font-medium" style={{ color: 'var(--text-muted)' }}>
-            One platform. Five evaluation pillars. From first prompt test to continuous production monitoring.
-          </p>
         </div>
       </section>
 
@@ -604,7 +649,7 @@ export function CogniTuringPage() {
             <div className="mb-4">
               <SectionTag text="The Platform" icon={Layers} />
             </div>
-            <h2 className="text-4xl lg:text-5xl mb-4" style={{ color: 'var(--text-primary)', fontWeight: 700 }}>
+            <h2 className="text-4xl lg:text-5xl mb-4" style={{ color: 'var(--text-primary)', fontWeight: 700, lineHeight: '1.2' }}>
               Five Pillars.{' '}
               <span
                 style={{
@@ -618,7 +663,7 @@ export function CogniTuringPage() {
               </span>
             </h2>
             <p className="text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
-              Cognituring covers quality, safety, and compliance — in one system — with a workflow your QA and engineering teams will actually use.
+              {hl('CogniTuring covers quality, safety, and compliance — in one system — with a workflow your QA and engineering teams will actually use.')}
             </p>
           </div>
 
@@ -667,7 +712,7 @@ export function CogniTuringPage() {
                     {p.headline}
                   </h3>
                   <p className="text-base leading-relaxed mb-6" style={{ color: 'var(--text-secondary)' }}>
-                    {p.body}
+                    {hl(p.body)}
                   </p>
                   <p
                     className="text-sm font-medium p-4 rounded-lg"
@@ -805,7 +850,7 @@ export function CogniTuringPage() {
             <div className="mb-4">
               <SectionTag text="The Workflow" icon={GitBranch} />
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)', lineHeight: '1.2' }}>
               From First Connection to{' '}
               <span
                 style={{
@@ -865,7 +910,7 @@ export function CogniTuringPage() {
                       </div>
                       <div className="mb-1.5" style={{ color: '#2563EB' }}>{s.icon}</div>
                       <h4 className="text-sm font-bold mb-2" style={{ color: 'var(--text-primary)' }}>{s.title}</h4>
-                      <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{s.desc}</p>
+                      <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{hl(s.desc)}</p>
                     </div>
                   ))}
                 </div>
@@ -913,7 +958,7 @@ export function CogniTuringPage() {
                       </div>
                       <div className="mb-1.5" style={{ color: '#06B6D4' }}>{s.icon}</div>
                       <h4 className="text-sm font-bold mb-2" style={{ color: 'var(--text-primary)' }}>{s.title}</h4>
-                      <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{s.desc}</p>
+                      <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{hl(s.desc)}</p>
                     </div>
                   ))}
                 </div>
@@ -931,9 +976,9 @@ export function CogniTuringPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-16">
             <div className="mb-4">
-              <SectionTag text="Who Uses Cognituring" icon={Users} />
+              <SectionTag text="Who Uses CogniTuring" icon={Users} />
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="text-4xl lg:text-5xl font-bold" style={{ color: 'var(--text-primary)', lineHeight: '1.2' }}>
               Built for the Teams{' '}
               <span
                 style={{
@@ -990,7 +1035,7 @@ export function CogniTuringPage() {
             <div className="mb-4">
               <SectionTag text="Use Cases" icon={Target} />
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="text-4xl lg:text-5xl font-bold" style={{ color: 'var(--text-primary)', lineHeight: '1.2' }}>
               The Same Problems.{' '}
               <span
                 style={{
@@ -1035,7 +1080,7 @@ export function CogniTuringPage() {
                     {uc.icon}
                   </div>
                   <h3 className="text-base font-bold mb-2" style={{ color: 'var(--text-primary)' }}>{uc.title}</h3>
-                  <p className="text-sm leading-relaxed flex-grow mb-4" style={{ color: 'var(--text-secondary)' }}>{uc.desc}</p>
+                  <p className="text-sm leading-relaxed flex-grow mb-4" style={{ color: 'var(--text-secondary)' }}>{hl(uc.desc)}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {uc.tags.map((tag) => (
                       <span
@@ -1066,9 +1111,9 @@ export function CogniTuringPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-14">
             <div className="mb-4">
-              <SectionTag text="Why Cognituring" icon={TrendingUp} />
+              <SectionTag text="Why CogniTuring" icon={TrendingUp} />
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)', lineHeight: '1.2' }}>
               The Only Platform That Covers{' '}
               <span
                 style={{
@@ -1099,8 +1144,8 @@ export function CogniTuringPage() {
               }}
             >
               <div className="px-4 text-left" style={{ color: 'var(--text-primary)' }}>Capability</div>
-              {['Manual Spreadsheets', 'Observability Tools', 'Point Eval Tools', 'Cognituring'].map((h) => (
-                <div key={h} className="px-2" style={{ color: h === 'Cognituring' ? '#2563EB' : 'var(--text-secondary)' }}>
+              {['Manual Spreadsheets', 'Observability Tools', 'Point Eval Tools', 'CogniTuring'].map((h) => (
+                <div key={h} className="px-2" style={{ color: h === 'CogniTuring' ? '#2563EB' : 'var(--text-secondary)' }}>
                   {h}
                 </div>
               ))}
@@ -1127,7 +1172,7 @@ export function CogniTuringPage() {
           </div>
 
           <p className="text-center mt-10 text-base font-medium max-w-3xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
-            <strong style={{ color: 'var(--text-primary)' }}>Cognituring is the only platform</strong> that gives QA teams, engineering leaders, and governance functions a single, shared evidence base — from first test run to ongoing production monitoring.
+            <strong style={{ color: '#2563EB', fontWeight: 700 }}>CogniTuring is the only platform</strong> that gives QA teams, engineering leaders, and governance functions a single, shared evidence base — from first test run to ongoing production monitoring.
           </p>
         </div>
       </section>
@@ -1142,7 +1187,7 @@ export function CogniTuringPage() {
             <div className="mb-4">
               <SectionTag text="How We Deliver" icon={Layers} />
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="text-4xl lg:text-5xl font-bold" style={{ color: 'var(--text-primary)', lineHeight: '1.2' }}>
               Software That Works Out of the Box.{' '}
               <span
                 style={{
@@ -1167,7 +1212,7 @@ export function CogniTuringPage() {
               <h3 className="text-2xl font-bold mb-1" style={{ color: 'var(--text-primary)' }}>Run It Yourself</h3>
               <p className="text-sm mb-5" style={{ color: 'var(--text-muted)' }}>For teams that want AI quality workflows in-house</p>
               <p className="text-sm leading-relaxed mb-6" style={{ color: 'var(--text-secondary)' }}>
-                Cognituring is a platform your QA engineers can operate directly. Connect your AI endpoint, import or generate test datasets, configure dimensions and gates, and get scored evaluation results with one click.
+                {hl('CogniTuring is a platform your QA engineers can operate directly. Connect your AI endpoint, import or generate test datasets, configure dimensions and gates, and get scored evaluation results with one click.')}
               </p>
               <ul className="space-y-2.5">
                 {['7-stage evaluation workflow', '9+ evaluation dimensions', 'AI-judge + deterministic hybrid scoring', 'Multi-provider connector', 'CI/CD pipeline hooks', 'SQLite persistence, exportable evidence'].map((item) => (
@@ -1188,7 +1233,7 @@ export function CogniTuringPage() {
               <h3 className="text-2xl font-bold mb-1" style={{ color: 'var(--text-primary)' }}>Work With Our Experts</h3>
               <p className="text-sm mb-5" style={{ color: 'var(--text-muted)' }}>For organizations where evaluation stakes require domain expertise</p>
               <p className="text-sm leading-relaxed mb-6" style={{ color: 'var(--text-secondary)' }}>
-                AI assurance is rarely just a tooling problem. When the quality of evaluation depends on deep business context — healthcare, financial services, legal, regulated environments — Cognituring's specialists work alongside your team.
+                {hl("AI assurance is rarely just a tooling problem. When the quality of evaluation depends on deep business context — healthcare, financial services, legal, regulated environments — CogniTuring's specialists work alongside your team.")}
               </p>
               <ul className="space-y-2.5">
                 {['Evaluation strategy definition', 'Domain-specific rubric development', 'Dataset curation and gold-set validation', 'Ground truth sign-off for release-critical scenarios', 'Managed assurance programs and ongoing support', 'Customer-facing assurance artifacts'].map((item) => (
@@ -1221,7 +1266,7 @@ export function CogniTuringPage() {
               Built-In Mapping to the Frameworks Your Governance Team Is Already Using.
             </h2>
             <p className="text-base max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
-              Cognituring automatically maps test outcomes to the standards that matter — no manual compliance layer required.
+              {hl('CogniTuring automatically maps test outcomes to the standards that matter — no manual compliance layer required.')}
             </p>
           </div>
 
@@ -1256,7 +1301,7 @@ export function CogniTuringPage() {
             <div className="mb-4">
               <SectionTag text="Enterprise-Ready" icon={Building2} />
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="text-4xl lg:text-5xl font-bold" style={{ color: 'var(--text-primary)', lineHeight: '1.2' }}>
               Deploy Your Way.{' '}
               <span
                 style={{
@@ -1329,14 +1374,14 @@ export function CogniTuringPage() {
                   className="w-full flex items-center justify-between px-6 py-5 text-left"
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 >
-                  <span className="text-base font-semibold pr-4" style={{ color: 'var(--text-primary)' }}>{faq.q}</span>
+                  <span className="text-base font-semibold pr-4" style={{ color: 'var(--text-primary)' }}>{hl(faq.q)}</span>
                   {openFaq === i
                     ? <ChevronUp className="w-5 h-5 flex-shrink-0" style={{ color: '#2563EB' }} />
                     : <ChevronDown className="w-5 h-5 flex-shrink-0" style={{ color: 'var(--text-muted)' }} />}
                 </button>
                 {openFaq === i && (
                   <div className="px-6 pb-5">
-                    <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{faq.a}</p>
+                    <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{hl(faq.a)}</p>
                   </div>
                 )}
               </div>
@@ -1355,7 +1400,7 @@ export function CogniTuringPage() {
             <div className="mb-4">
               <SectionTag text="Packaging" icon={BarChart3} />
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)', lineHeight: '1.2' }}>
               Start With What You Need.{' '}
               <span
                 style={{
@@ -1369,7 +1414,7 @@ export function CogniTuringPage() {
               </span>
             </h2>
             <p className="text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
-              Cognituring is modular by design — whether you're starting with foundational QA for a single AI application or building a full enterprise assurance program.
+              {hl("CogniTuring is modular by design — whether you're starting with foundational QA for a single AI application or building a full enterprise assurance program.")}
             </p>
           </div>
 
@@ -1438,16 +1483,16 @@ export function CogniTuringPage() {
         <div className="absolute inset-0 neural-pattern" style={{ opacity: 0.06 }} />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <div className="mb-6">
-            <Tag icon={Shield} size="lg" variant="default">Cognituring</Tag>
+            <Tag icon={Shield} size="lg" variant="default">CogniTuring</Tag>
           </div>
-          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6" style={{ lineHeight: '1.1' }}>
+          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6" style={{ lineHeight: '1.2' }}>
             Your AI is already live.
             <span className="block mt-2" style={{ color: '#93C5FD' }}>
               The question is whether it's been properly tested.
             </span>
           </h2>
           <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Cognituring is the QA platform purpose-built for AI systems. From your first evaluation run to ongoing production assurance — we give your team the tools, the evidence, and the expert support to release AI with confidence.
+            {hl('CogniTuring is the QA platform purpose-built for AI systems. From your first evaluation run to ongoing production assurance — we give your team the tools, the evidence, and the expert support to release AI with confidence.', true)}
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <Link
