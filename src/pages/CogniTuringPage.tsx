@@ -331,7 +331,7 @@ export function CogniTuringPage() {
       gradient: 'from-blue-500 to-cyan-400',
     },
     {
-      name: 'Platform + Security & Agents',
+      name: 'Platform + Service & Agents',
       subtitle: 'For teams with agents in production or security requirements.',
       features: [
         'Everything in Core, plus:',
@@ -400,7 +400,18 @@ export function CogniTuringPage() {
   const hl = (text: string, dark = false) =>
     text.split('CogniTuring').flatMap((part, i, arr) =>
       i < arr.length - 1
-        ? [part, <strong key={i} style={{ color: dark ? '#93C5FD' : '#2563EB', fontWeight: 700 }}>CogniTuring</strong>]
+        ? [part, <strong key={i} style={{ 
+            background: dark
+              ? 'linear-gradient(135deg, #60A5FA 0%, #34D399 100%)'
+              : 'linear-gradient(135deg, #2563EB 0%, #06B6D4 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            fontWeight: 900,
+            fontSize: '1.4em',
+            letterSpacing: '0.3px',
+            display: 'inline',
+          }}>CogniTuring</strong>]
         : [part]
     );
 
@@ -458,7 +469,7 @@ export function CogniTuringPage() {
             </h1>
 
             <p className="text-xl lg:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              <strong style={{ color: '#2563EB', fontWeight: 800 }}>CogniTuring</strong> is the enterprise QA platform for AI systems, copilots, and agents.
+              <strong style={{ background: 'linear-gradient(135deg, #2563EB 0%, #06B6D4 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontWeight: 900, fontSize: '1.4em', letterSpacing: '0.3px', display: 'inline' }}>CogniTuring</strong> is the enterprise QA platform for AI systems, copilots, and agents.
               Test what your AI says. Verify what it does. Prove it's ready — before it costs you.
             </p>
 
@@ -1468,52 +1479,6 @@ export function CogniTuringPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── FINAL CTA ─────────────────────────────────────────────────────── */}
-      <section
-        className="py-28 relative overflow-hidden"
-        style={{
-          background: theme === 'dark'
-            ? 'linear-gradient(135deg, rgba(37,99,235,0.15) 0%, rgba(15,23,42,0.98) 50%, rgba(6,182,212,0.1) 100%)'
-            : 'linear-gradient(135deg, #1E1B4B 0%, #312E81 50%, #1e3a8a 100%)',
-        }}
-      >
-        <div className="absolute inset-0 neural-pattern" style={{ opacity: 0.06 }} />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-          <div className="mb-6">
-            <Tag icon={Shield} size="lg" variant="default">CogniTuring</Tag>
-          </div>
-          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6" style={{ lineHeight: '1.2' }}>
-            Your AI is already live.
-            <span className="block mt-2" style={{ color: '#93C5FD' }}>
-              The question is whether it's been properly tested.
-            </span>
-          </h2>
-          <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-            {hl('CogniTuring is the QA platform purpose-built for AI systems. From your first evaluation run to ongoing production assurance — we give your team the tools, the evidence, and the expert support to release AI with confidence.', true)}
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Link
-              to="/contact"
-              className="px-8 py-4 text-white rounded-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2"
-              style={{ background: 'linear-gradient(135deg, #2563EB 0%, #2563EB 100%)', boxShadow: '0 4px 16px rgba(37,99,235,0.4)' }}
-            >
-              Book a 30-Min Demo — No Slides. Just the Product.
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link
-              to="/contact"
-              className="px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:scale-105"
-              style={{ border: '1.5px solid rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.9)' }}
-            >
-              Download the Platform Overview
-            </Link>
-          </div>
-          <p className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>
-            Any bot. Any model. Any stack. First run in under 30 minutes.
-          </p>
         </div>
       </section>
 
