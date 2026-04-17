@@ -179,6 +179,7 @@ export function ContactPage() {
                 {[
                   { icon: Mail, label: 'Email', value: 'info@cogniron.com', href: 'mailto:info@cogniron.com' },
                   { icon: MapPin, label: 'US Office', value: '8787 N MacArthur BLVD STE 120-A\nIrving, TX 75063' },
+                  { icon: MapPin, label: 'India Office', value: '1502B, Manjeera Trinity Corporate\nHyderabad, TG 500072' },
                   { icon: Clock, label: 'Business Hours', value: 'Monday - Friday: 10am - 7pm CST\n24/7 Support for Enterprise Clients' },
                 ].map((item, index) => (
                   <div key={index} className="flex items-start space-x-4">
