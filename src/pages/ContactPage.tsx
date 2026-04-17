@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Send, CheckCircle2, Clock, Phone, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle2, Clock, Phone, ArrowRight, AlertCircle } from 'lucide-react';
 import { PageContainer } from '../components/PageContainer';
 import { useTheme } from '../contexts/ThemeContext';
 import { useGradientShimmer } from '../hooks/useGradientShimmer';
 import { Link } from 'react-router-dom';
+import { supabase } from '../lib/supabase';
 
 export function ContactPage() {
   const { theme } = useTheme();
@@ -12,29 +13,44 @@ export function ContactPage() {
     name: '',
     email: '',
     company: '',
-    jobTitle: '',
-    countryTimezone: '',
-    service: '', // Changed from services: [] to service: ''
+    service: '',
     otherService: '',
     message: '',
-    phone: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitting(true);
+    setSubmitError(null);
+
+    const { error } = await supabase.from('contacts').insert({
+      name: formData.name,
+      email: formData.email,
+      company: formData.company,
+      service: formData.service,
+      other_service: formData.otherService || null,
+      message: formData.message,
+    });
+
+    setSubmitting(false);
+
+    if (error) {
+      setSubmitError('Something went wrong. Please try again or email us directly at info@cogniron.com.');
+      return;
+    }
+
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setTimeout(() => setSubmitted(false), 6000);
     setFormData({ 
       name: '', 
       email: '', 
       company: '', 
-      jobTitle: '',
-      countryTimezone: '',
       service: '',
       otherService: '',
       message: '',
-      phone: '',
     });
   };
 
@@ -162,8 +178,8 @@ export function ContactPage() {
               <div className="space-y-6 mb-12">
                 {[
                   { icon: Mail, label: 'Email', value: 'info@cogniron.com', href: 'mailto:info@cogniron.com' },
-                  { icon: MapPin, label: 'India Office', value: '1502B, Manjeera Trinity Corporate\nHyderabad, TG 500072\n\nUS Office:\n8787 N MacArthur BLVD STE 120-A\nIrving, TX 75063' },
-                  { icon: Clock, label: 'Business Hours', value: 'Monday - Friday: 10am - 7pm IST\n24/7 Support for Enterprise Clients' },
+                  { icon: MapPin, label: 'US Office', value: '8787 N MacArthur BLVD STE 120-A\nIrving, TX 75063' },
+                  { icon: Clock, label: 'Business Hours', value: 'Monday - Friday: 10am - 7pm CST\n24/7 Support for Enterprise Clients' },
                 ].map((item, index) => (
                   <div key={index} className="flex items-start space-x-4">
                     <div
@@ -249,6 +265,21 @@ export function ContactPage() {
                   </div>
                 )}
 
+                {submitError && (
+                  <div
+                    className="mb-6 p-4 rounded-xl flex items-center"
+                    style={{
+                      background: theme === 'dark'
+                        ? 'linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(239, 68, 68, 0.1))'
+                        : 'linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05))',
+                      border: '1px solid rgba(239, 68, 68, 0.3)',
+                    }}
+                  >
+                    <AlertCircle className="w-5 h-5 mr-3 flex-shrink-0" style={{ color: '#EF4444' }} />
+                    <span style={{ color: 'var(--text-primary)' }}>{submitError}</span>
+                  </div>
+                )}
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* ROW 1: Full Name + Work Email */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -295,60 +326,16 @@ export function ContactPage() {
                     </div>
                   </div>
 
-                  {/* ROW 2: Company Name + Job Title */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="company" className="block mb-2" style={{ color: 'var(--text-primary)' }}>
-                        Company Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 rounded-xl transition-all"
-                        style={{
-                          backgroundColor: 'var(--input-bg)',
-                          border: '1px solid var(--input-border)',
-                          color: 'var(--text-primary)',
-                        }}
-                        placeholder="Acme Inc."
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="jobTitle" className="block mb-2" style={{ color: 'var(--text-primary)' }}>
-                        Job Title / Role *
-                      </label>
-                      <input
-                        type="text"
-                        id="jobTitle"
-                        name="jobTitle"
-                        value={formData.jobTitle}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 rounded-xl transition-all"
-                        style={{
-                          backgroundColor: 'var(--input-bg)',
-                          border: '1px solid var(--input-border)',
-                          color: 'var(--text-primary)',
-                        }}
-                        placeholder="QA Manager, CTO, Product Lead"
-                      />
-                    </div>
-                  </div>
-
-                  {/* ROW 3: Country/Timezone */}
+                  {/* ROW 2: Company Name */}
                   <div>
-                    <label htmlFor="countryTimezone" className="block mb-2" style={{ color: 'var(--text-primary)' }}>
-                      Country / Time Zone *
+                    <label htmlFor="company" className="block mb-2" style={{ color: 'var(--text-primary)' }}>
+                      Company Name *
                     </label>
-                    <select
-                      id="countryTimezone"
-                      name="countryTimezone"
-                      value={formData.countryTimezone}
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      value={formData.company}
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 rounded-xl transition-all"
@@ -357,25 +344,11 @@ export function ContactPage() {
                         border: '1px solid var(--input-border)',
                         color: 'var(--text-primary)',
                       }}
-                    >
-                      <option value="">Select your region...</option>
-                      <option value="Americas/Eastern">Americas - Eastern Time (ET)</option>
-                      <option value="Americas/Central">Americas - Central Time (CT)</option>
-                      <option value="Americas/Mountain">Americas - Mountain Time (MT)</option>
-                      <option value="Americas/Pacific">Americas - Pacific Time (PT)</option>
-                      <option value="Europe/UK">Europe - UK / Ireland (GMT/BST)</option>
-                      <option value="Europe/Central">Europe - Central European Time (CET)</option>
-                      <option value="Europe/Eastern">Europe - Eastern European Time (EET)</option>
-                      <option value="Asia/India">Asia - India Standard Time (IST)</option>
-                      <option value="Asia/Singapore">Asia - Singapore / Malaysia (SGT)</option>
-                      <option value="Asia/China">Asia - China Standard Time (CST)</option>
-                      <option value="Asia/Japan">Asia - Japan Standard Time (JST)</option>
-                      <option value="Asia/Australia">Australia - Eastern Time (AEST)</option>
-                      <option value="Other">Other</option>
-                    </select>
+                      placeholder="Acme Inc."
+                    />
                   </div>
 
-                  {/* ROW 4: What do you need help with? */}
+                  {/* ROW 5: Service Dropdown */}
                   <div>
                     <label htmlFor="service" className="block mb-2" style={{ color: 'var(--text-primary)' }}>
                       What do you need help with? *
@@ -394,6 +367,7 @@ export function ContactPage() {
                       }}
                     >
                       <option value="">Select a service...</option>
+                      <option value="CogniTuring">CogniTuring</option>
                       <option value="Gretah AI">Gretah AI</option>
                       <option value="Functional / Regression Testing">Functional / Regression Testing</option>
                       <option value="Test Automation">Test Automation</option>
@@ -427,10 +401,10 @@ export function ContactPage() {
                     )}
                   </div>
 
-                  {/* ROW 5: Message / Project Details */}
+                  {/* ROW 4: Message / Project Details */}
                   <div>
                     <label htmlFor="message" className="block mb-2" style={{ color: 'var(--text-primary)' }}>
-                      Message / Project Details *
+                      Tell us about your need *
                     </label>
                     <textarea
                       id="message"
@@ -445,37 +419,15 @@ export function ContactPage() {
                         border: '1px solid var(--input-border)',
                         color: 'var(--text-primary)',
                       }}
-                      placeholder="Tell us about your product, tech stack, release cadence, and what success looks like..."
+                      placeholder="Tell us about your needs, challenges, and what success looks like for your organization..."
                     />
-                    <p className="text-xs mt-2" style={{ color: 'var(--text-secondary)' }}>
-                      Tell us about your product, tech stack, release cadence, and what success looks like.
-                    </p>
                   </div>
 
-                  {/* ROW 6: Phone Number (Optional) */}
-                  <div>
-                    <label htmlFor="phone" className="block mb-2" style={{ color: 'var(--text-primary)' }}>
-                      Phone Number <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>(Optional)</span>
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl transition-all"
-                      style={{
-                        backgroundColor: 'var(--input-bg)',
-                        border: '1px solid var(--input-border)',
-                        color: 'var(--text-primary)',
-                      }}
-                      placeholder="+1 (555) 123-4567"
-                    />
-                  </div>
 
                   <button
                     type="submit"
-                    className="w-full px-8 py-4 rounded-xl transition-all duration-300 hover:scale-[1.02] flex items-center justify-center group"
+                    disabled={submitting}
+                    className="w-full px-8 py-4 rounded-xl transition-all duration-300 hover:scale-[1.02] flex items-center justify-center group disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                     style={{
                       background: 'linear-gradient(135deg, #2563EB 0%, #06B6D4 100%)',
                       color: '#FFFFFF',
@@ -483,7 +435,7 @@ export function ContactPage() {
                     }}
                   >
                     <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
-                    Send Message
+                    {submitting ? 'Sending...' : 'Send Message'}
                   </button>
 
                   <p className="text-sm text-center" style={{ color: 'var(--text-secondary)' }}>
@@ -518,15 +470,15 @@ export function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
-                title: 'India Address',
-                phone: '+91 7680039529',
-                address: '1502B, Manjeera Trinity Corporate\nHyderabad, TG 500072',
-                email: 'info@cogniron.com',
-              },
-              {
                 title: 'US Address',
                 phone: '+1-945-268-5213',
                 address: '8787 N MacArthur BLVD\nSTE 120-A, Irving, TX 75063',
+                email: 'info@cogniron.com',
+              },
+              {
+                title: 'India Address',
+                phone: '+91 7680039529',
+                address: '1502B, Manjeera Trinity Corporate\nHyderabad, TG 500072',
                 email: 'info@cogniron.com',
               },
             ].map((office, index) => (
