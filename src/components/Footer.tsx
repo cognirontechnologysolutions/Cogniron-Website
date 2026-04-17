@@ -175,13 +175,13 @@ export function Footer() {
               </li>
               <li className="flex items-start space-x-3" style={{ color: 'var(--text-secondary)' }}>
                 <Phone className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <a href="tel:+91 7680039529" className="transition-colors">
-                  +91 7680039529
+                <a href="tel:+1-945-268-5213" className="transition-colors">
+                  +1-945-268-5213
                 </a>
               </li>
               <li className="flex items-start space-x-3" style={{ color: 'var(--text-secondary)' }}>
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <span>1502B, Manjeera Trinity Corporate, Hyderabad, TG 500072</span>
+                <span>8787 N MacArthur BLVD STE 120-A, Irving, TX 75063</span>
               </li>
             </ul>
           </div>
